@@ -1,0 +1,17 @@
+[project]
+name = "connect-four-project"
+version = "0.1.0"
+description = "Connect Four game and agent project"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "gymnasium>=1.0,<2",
+    "ipykernel",
+    "numpy<2",
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
