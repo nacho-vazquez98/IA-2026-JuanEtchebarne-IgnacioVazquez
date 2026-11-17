@@ -1,0 +1,94 @@
+# Plan de tareas — Obligatorio de Inteligencia Artificial (ORT, agosto 2026)
+
+**Fuente:** `Obligatorio_IA_Agosto_2026.pdf` (5 páginas). Dos proyectos: **ACROBAT** (Acrobot; Q-Learning y Dyna-Q) y **COUNTER** (Connect Four; Minimax/Alpha-Beta y Expectimax).
+
+**Cómo leer las tablas:** `E` = requisito explícito de la consigna; `R` = tarea de ingeniería propuesta para cumplir, verificar o documentar un requisito; `E/R` = combinación. La columna **Descripción** detalla qué se espera hacer y qué evidencia o resultado debe quedar. Los métodos, métricas y ejemplos enumerados dentro de tareas `R` son sugerencias de trabajo, no exigencias adicionales de la cátedra. Las dependencias indican prerrequisitos para **completar** la tarea; el análisis teórico y la documentación pueden comenzar antes.
+
+## 0. Preparación compartida
+
+| ID | Tipo | Tarea | Descripción | Depende de |
+|---|---|---|---|---|
+| P01 | E/R | Reunir los materiales base | Obtener el enunciado vigente y el código de los **dos simuladores** entregados por la cátedra, incluidos ejemplos, configuraciones y recursos necesarios. Confirmar que ambos integrantes acceden a las mismas versiones. No comenzar la implementación sobre interfaces supuestas. | — |
+| P02 | R | Inspeccionar los simuladores | Identificar carpetas, dependencias, APIs y puntos de entrada. Para Acrobot, localizar observaciones, acciones, recompensas y episodios; para Connect Four, reglas, representación del tablero, acciones y forma de jugar contra Stratego. Anotar qué componentes existen y cuáles habrá que crear. | P01 |
+| P03 | E/R | Configurar Poetry, Git y colaboración | Preparar **dos entornos Poetry independientes**, comprobar versiones de Python y establecer la organización del repositorio. El **primer agente** debe crear y verificar `.gitignore`, incluir `/.CODEX/` y `/.CLAUDE/`, y subirlo en una rama con **PR a `main` en GitHub**; ese PR debe quedar fusionado antes de otras features. Luego regirán ramas `feature/*` desde `main`, con PR obligatorio y aprobación previa para cambios posteriores en `.gitignore`. | P01 |
+| P04 | R | Ejecutar los entornos base | Instalar dependencias, correr las demostraciones o simulaciones mínimas sin cambiar las reglas y verificar que ambos integrantes puedan repetir los pasos. Guardar comandos de ejecución y resolver problemas de instalación o compatibilidad antes de iniciar experimentos. | P02, P03 |
+| P05 | R | Acordar el protocolo experimental | Definir cómo se medirán y compararán los agentes: métricas, cantidad de episodios o partidas, repeticiones, semillas cuando apliquen, límites de cómputo, archivos de registro y gráficos. Distinguir pruebas de desarrollo de evaluación final para evitar elegir configuraciones con datos no comparables. | P04 |
+
+## 1. ACROBAT — Acrobot
+
+| ID | Tipo | Tarea | Descripción | Depende de |
+|---|---|---|---|---|
+| A01 | R | Comprender el ambiente Acrobot | Ejecutar episodios de ejemplo y analizar el formato y los rangos reales de las observaciones continuas, las acciones disponibles, las recompensas, la condición de éxito y el truncamiento o finalización. Identificar cualquier normalización necesaria de acuerdo con el código provisto. | P04 |
+| A02 | E | Diseñar discretizaciones alternativas | Proponer **varias formas** de convertir observaciones continuas en estados discretos. Para cada opción, definir dimensiones, límites e intervalos (uniformes o no, si corresponde) y estimar tamaño y costo de la tabla Q. Establecer hipótesis sobre precisión y aprendizaje para justificar qué se compara. | A01 |
+| A03 | E/R | Implementar y validar discretización | Programar un transformador observación → índice o clave de estado discreto, parametrizable para las alternativas de A02. Probar valores de frontera, fuera de rango y casos repetidos; asegurar que un mismo estado siempre produzca una representación válida para la tabla Q. | A02 |
+| A04 | E | Implementar Q-Learning | Desarrollar el agente tabular con selección de acciones y actualización de valores Q a partir de transiciones y recompensas del simulador. Parametrizar aprendizaje, descuento y exploración si aplica; tratar correctamente estados terminales y garantizar que las acciones respeten la API existente. | A03 |
+| A05 | R | Construir entrenamiento, evaluación y persistencia | Crear comandos o funciones separadas para entrenar y evaluar sin exploración de entrenamiento, registrar resultados por episodio y cargar/guardar la tabla o política. Verificar un ciclo mínimo completo: entrenar, guardar, reiniciar el proceso, cargar y ejecutar una evaluación. | A04, P05 |
+| A06 | E | Comparar estrategias de discretización | Entrenar y evaluar las alternativas propuestas bajo condiciones comparables. Registrar desempeño, variabilidad, tamaño de tabla y costo de entrenamiento; presentar resultados que permitan explicar el impacto de la granularidad y elegir una o varias opciones prometedoras. | A05 |
+| A07 | E | Explorar hiperparámetros de Q-Learning | Ejecutar múltiples combinaciones razonadas de parámetros, por ejemplo tasas de aprendizaje, descuento, exploración y su evolución, manteniendo fijo o controlado el protocolo de prueba. Registrar todas las configuraciones, evaluar con métricas justificadas y explicar por qué se selecciona la final. | A06 |
+| A08 | E/R | Consolidar Q-Learning y guardar un modelo | Seleccionar la mejor configuración según las pruebas (no solo una corrida), volver a entrenar si es necesario, guardar el modelo computado y demostrar que se carga y ejecuta. Conservar tablas, tiempos, gráficos y explicación de los resultados para el informe. **Al menos un modelo ACROBAT entregado es obligatorio.** | A07 |
+| A09 | E | Estudiar Dyna-Q en Sutton y Barto | Leer los apartados **8.1 y 8.2** de *Reinforcement Learning: An Introduction*. Comprender la combinación de aprendizaje con experiencia real, modelo aprendido del ambiente y actualizaciones de planificación; registrar una explicación propia de la elección de diseño. Puede hacerse en paralelo con A01–A08. | P01 |
+| A10 | E | Implementar Dyna-Q | Extender o reutilizar Q-Learning incorporando un modelo aprendido de las transiciones observadas y pasos de planificación que actualicen Q con experiencias simuladas. Hacer configurable la cantidad de pasos de planificación y probar que se actualicen tanto el componente real como el simulado. | A04, A09 |
+| A11 | E | Experimentar con Dyna-Q | Ejecutar un estudio comparable al de Q-Learning: discretización, parámetros relevantes y especialmente cantidad de pasos de planificación. Registrar desempeño, costo computacional, número de episodios y variación entre corridas; justificar el criterio de selección y dejar evidencia para gráficos. | A05, A10, P05 |
+| A12 | E/R | Comparar Q-Learning y Dyna-Q | Confrontar ambos métodos en condiciones equivalentes y discutir eficacia, velocidad de aprendizaje, tiempo y compromisos relevantes. Seleccionar configuraciones, conservar los modelos que correspondan, verificar su carga y escribir conclusiones basadas en las mediciones, incluidas limitaciones y resultados negativos. | A08, A11 |
+
+## 2. COUNTER — Connect Four
+
+| ID | Tipo | Tarea | Descripción | Depende de |
+|---|---|---|---|---|
+| C01 | R | Comprender el simulador y Stratego | Revisar dimensiones y representación del tablero, jugador activo, turnos, acciones legales, criterio de victoria/empate y contrato que debe implementar un agente. Confirmar cómo se inicia una partida contra **Stratego**, cómo se obtienen sus movimientos y qué límites o restricciones existen en el código real. | P04 |
+| C02 | R | Preparar la lógica de estados y sucesores | Reutilizar las funciones existentes o desarrollar únicamente las necesarias para generar jugadas válidas, estados sucesores y detección de estados terminales. Verificar que no se muten indebidamente tableros compartidos y que la perspectiva del jugador sea consistente. | C01 |
+| C03 | E | Diseñar funciones de evaluación | Implementar varias heurísticas para estados no terminales y una evaluación correcta de victorias/derrotas/empates. Probar combinaciones y pesos (por ejemplo, oportunidades de conectar fichas, amenazas y posiciones útiles, si las reglas lo permiten) y documentar el sentido de cada término. | C02 |
+| C04 | E | Implementar Minimax | Desarrollar búsqueda adversarial con alternancia de MAX/MIN, profundidad acotada, estados terminales y uso de las funciones heurísticas en hojas no terminales. Garantizar la devolución de una jugada legal y dejar parametrizable la profundidad para experimentar. | C02, C03 |
+| C05 | E | Incorporar Alpha-Beta Pruning | Añadir poda alfa-beta a Minimax y comprobar que, frente a los mismos estados, profundidad y evaluación, conserva el valor de decisión respecto a Minimax sin poda. Instrumentar tiempo y nodos evaluados para medir y explicar el **impacto de la poda**. | C04 |
+| C06 | E | Implementar Expectimax | Construir la variante que calcula utilidad esperada en nodos de incertidumbre. Explicitar qué probabilidades se asignan a las jugadas del adversario y por qué ese modelo tiene sentido para este experimento; permitir comparación bajo condiciones equivalentes con Minimax. | C02, C03 |
+| C07 | R | Probar agentes y casos límite | Crear pruebas con tableros conocidos: jugada ganadora inmediata, necesidad de bloqueo, empate, columna llena, alternancia de turnos y límite de profundidad. Verificar legalidad de las acciones y consistencia de Minimax, poda y Expectimax antes de evaluar contra Stratego. | C04, C05, C06 |
+| C08 | E/R | Definir protocolo de partidas | Acordar rivales, alternancia de inicio/colores, cantidad de partidas, parámetros fijos, semillas cuando apliquen y medidas de desempeño. Registrar al menos resultados de partidas y condiciones de cada ejecución; opcionalmente tiempos por jugada, profundidad y nodos para explicar el comportamiento. | C07, P05 |
+| C09 | E | Experimentar con heurísticas y pesos | Ejecutar partidos o conjuntos de posiciones manteniendo controladas las demás variables y modificando funciones de evaluación, combinaciones y ponderaciones. Guardar configuración y resultados por variante; identificar ventajas, fallos frecuentes y qué función resulta más útil según la evidencia. | C08 |
+| C10 | E | Medir el efecto de Alpha-Beta | Comparar Minimax con poda frente a Minimax sin poda sobre exactamente los mismos tableros y profundidades. Analizar nodos visitados y tiempo, además de corroborar que se conserva la decisión o utilidad bajo condiciones equivalentes; explicar cuándo la poda aporta más. | C05, C08 |
+| C11 | E | Comparar Minimax y Expectimax contra Stratego | Organizar partidas de Minimax/Alpha-Beta y Expectimax ante el agente **Stratego** con un protocolo comparable. Registrar victorias, derrotas, empates y variabilidad; considerar recursos consumidos y qué supuestos sobre el rival favorecen o perjudican a Expectimax. | C08, C09, C10 |
+| C12 | E/R | Elegir el enfoque y justificarlo | Decidir con los resultados cuál algoritmo, heurística, ponderación y configuración conviene para este entorno. Fundamentar con experimentos reproducibles, reconocer límites y separar conclusiones medidas de hipótesis. Consolidar evidencias y texto técnico para el informe final. | C09, C10, C11 |
+
+## 3. Integración, informe, entrega y defensa
+
+| ID | Tipo | Tarea | Descripción | Depende de |
+|---|---|---|---|---|
+| I01 | R | Mantener la bitácora `documentación.md` | Registrar en el archivo **versionado y compartido** las decisiones técnicas importantes de cada feature: qué se decidió, por qué, alternativas, implicaciones y evidencia. Ante la duda de si una decisión merece registro, consultar al usuario. Coordinar ediciones y evitar reescribir entradas del compañero. | P03 *(continuo durante el desarrollo)* |
+| I02 | E | Consolidar resultados y gráficos | Reunir los experimentos de ambos proyectos; comprobar consistencia de unidades, configuraciones y métricas. Generar gráficos legibles de rendimiento y comparaciones, con títulos, leyendas y explicaciones que permitan entender el efecto de las decisiones técnicas. | A12, C12 |
+| I03 | E | Redactar informe y anexos | Elaborar un **PDF de hasta 20 páginas más anexos** que explique para cada proyecto cómo se abordó el problema, técnicas, interacción con el simulador, parámetros, tiempos, resultados, comparaciones, conclusiones y dificultades no resueltas. Usar la bitácora como referencia, no como sustituto de un informe redactado y validado por los estudiantes. | I01, I02 |
+| I04 | E | Declarar uso de IA generativa | Indicar expresamente qué herramientas se utilizaron (por ejemplo, Codex y Claude Code) y **para qué** (programación, ideas, revisión, etc.). Revisar manualmente exactitud de código, resultados y redacción; asegurar que el documento refleja las decisiones y comprensión del equipo. | I03 |
+| I05 | R | Realizar revisión cruzada | Cada estudiante debe ejecutar el proyecto del otro, leer su implementación principal y ser capaz de explicar decisiones, algoritmos, configuraciones y resultados. Revisar que ambos trabajos respeten el enunciado y preparar posibles preguntas para la defensa. | A12, C12 |
+| I06 | R | Verificar una entrega reproducible | Probar en condiciones limpias la instalación con Poetry de cada subproyecto y los comandos documentados para evaluación. Verificar particularmente **carga y ejecución de al menos un modelo computado ACROBAT**, rutas, dependencias y disponibilidad de archivos necesarios. | I05 |
+| I07 | E | Armar y auditar el ZIP final | Reunir todo el código usado (`.py`/`.ipynb`), modelos entrenados y PDF de informe con anexos pertinentes; comprobar que se abra y que el tamaño no supere **40 MB**. Excluir virtualenvs, cachés y carpetas auxiliares `.CODEX/` y `.CLAUDE/`; asegurarse de no excluir modelos necesarios. | I03, I04, I06 |
+| I08 | E | Inscribir equipo y subir entrega | **Al inicio**, verificar inscripción y conformar el equipo de hasta dos estudiantes del mismo dictado. **Al final**, subir un único ZIP en Gestión antes del **10/12/2026 a las 21:00**, verificar que el archivo correcto figure cargado y controlar el correo de confirmación. No dejar la inscripción para el último día. | I07 *(para subida; inscripción desde el inicio)* |
+| I09 | E | Preparar y realizar la defensa | Asegurar que los dos estudiantes puedan razonar sobre Q-Learning, Dyna-Q, Minimax, Alpha-Beta, Expectimax, decisiones, experimentos y resultados. Ensayar preguntas cruzadas y presentarse a la **defensa del 14/12/2026**, obligatoria y eliminatoria. | I05 *(preparación)*, I08 *(defensa posterior a la entrega)* |
+
+## Distribución sugerida para dos integrantes
+
+- **Integrante 1 — Codex:** responsable principal de **ACROBAT (A01–A12)**, gráficos, modelos entrenados y contenido correspondiente del informe. Puede estudiar Dyna-Q (A09) mientras desarrolla Q-Learning.
+- **Integrante 2 — Claude Code:** responsable principal de **COUNTER (C01–C12)**, gráficos, pruebas contra Stratego y contenido correspondiente del informe. Puede desarrollar Expectimax (C06) en paralelo al trabajo de Minimax cuando C02–C03 estén listos.
+- **Ambos:** preparación **P01–P05**, decisiones y documentación **I01**, integración y entrega **I02–I09**, revisión recíproca y comprensión completa para la defensa. La distribución es orientativa, no una condición del enunciado.
+
+## Precedencias y paralelismo
+
+1. **Bloque inicial:** P01 → P02 y P03 → P04 → P05. El primer agente debe dejar `.gitignore` integrado en `main` mediante un PR de GitHub antes de continuar con nuevas features.
+2. **Ramas independientes:** tras P04, **ACROBAT y COUNTER avanzan en paralelo**, cada feature en una rama nueva desde `main` y **PR en GitHub hacia `main`** antes de fusionar. Evitar la edición simultánea de un mismo archivo compartido.
+3. **ACROBAT:** A01 → A02 → A03 → A04 → A05 → A06 → A07 → A08. En paralelo, A09; luego A10 → A11 → A12, con A08 también necesario para la comparación final. No olvidar guardar un modelo computado.
+4. **COUNTER:** C01 → C02 → C03 → C04 y C06 (paralelos); C05 después de C04; C07 después de los tres métodos; C08 → C09 y C10; C11 → C12.
+5. **Integración:** I01 se mantiene durante todo el trabajo. A12 y C12 → I02 → I03 → I04 → I07 → I08; I05 → I06 también debe completarse antes de I07. La defensa I09 se prepara durante el proyecto.
+
+## Convenciones de colaboración para los agentes
+
+- **Una rama `feature/...` por tarea funcional**, creada desde `main` actualizado; abrir **PR en GitHub hacia `main`**, con pruebas y revisión antes de fusionarlo. No sobrescribir trabajo del otro estudiante.
+- **`.gitignore`:** el primer agente lo crea y lo integra mediante un PR inicial; cualquier cambio posterior requiere propuesta, justificación y **autorización expresa del usuario** antes de modificarlo y abrir otro PR.
+- **Auxiliares de IA:** `/.CODEX/` para Codex y `/.CLAUDE/` para Claude Code, ambas **ignoradas por Git**. Código entregable, modelos, tests y documentación van fuera de ellas.
+- **`documentación.md`:** bitácora de decisiones importantes explicando su porqué; ante duda sobre registrar una decisión, **consultar al usuario**. Editarla y versionarla junto con cada feature.
+- **Instrucciones comunes:** leer `CLAUDE.md`; `AGENTS.md` indica a Codex que aplique esas mismas reglas.
+
+## Puntos no especificados en el enunciado
+
+- API y estructura exacta de los simuladores, en especial la interfaz de Stratego.
+- Restricciones de tiempo/profundidad para búsquedas, si existen en el dictado.
+- Número mínimo de episodios, partidas, semillas y variantes a explorar: la consigna exige experimentar, pero **no determina cantidades**.
+- Distribución de los 30 puntos entre proyectos, informe y defensa.
+
+Consultar código o docentes cuando sea necesario; no presentar suposiciones como requisitos de la cátedra.
