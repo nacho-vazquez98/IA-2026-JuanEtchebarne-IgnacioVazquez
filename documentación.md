@@ -24,4 +24,9 @@ Modelo sugerido para futuras entradas:
 - **Evidencia / cómo se verificó:** ...
 -->
 
-_Aún no se registraron decisiones técnicas del desarrollo._
+### 2026-11-17 — Entornos de Poetry independientes
+
+- **Tarea** — P03.
+- **Decisión** — Conservar los manifiestos, archivos de bloqueo y configuraciones de Poetry provistos para Acrobot y Connect Four. Cada proyecto usa una `.venv` local y mantiene sus versiones resueltas en su propio `poetry.lock`.
+- **Motivo** — La consigna pide dos entornos separados. Compartir un entorno o un archivo de bloqueo acoplaría las dependencias. Por ejemplo, Acrobot declara `pygame` para el modo gráfico y Connect Four renderiza el tablero en la terminal.
+- **Verificación** — Los dos archivos de bloqueo coinciden con las declaraciones de sus manifiestos, y ambas configuraciones habilitan `.venv` dentro del proyecto. La instalación y la ejecución de los simuladores corresponden a P04.
