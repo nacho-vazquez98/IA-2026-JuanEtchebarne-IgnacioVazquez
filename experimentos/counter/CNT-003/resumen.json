@@ -1,0 +1,111 @@
+{
+  "partidas": 500,
+  "posiciones": 6987,
+  "victorias_j1": 281,
+  "victorias_j2": 219,
+  "empates": 0,
+  "costo_us_combinacion_todos_peso_1": 43.13,
+  "terminos": {
+    "lineas_posibles": {
+      "correlacion": 0.11,
+      "acierto_de_signo": 0.5482,
+      "media": 1.105,
+      "por_etapa": {
+        "apertura": {
+          "posiciones": 4637,
+          "correlacion": 0.0589
+        },
+        "medio": {
+          "posiciones": 2079,
+          "correlacion": 0.1798
+        },
+        "final": {
+          "posiciones": 271,
+          "correlacion": 0.2187
+        }
+      },
+      "costo_us_por_evaluacion": 6.36
+    },
+    "lineas_de_2": {
+      "correlacion": 0.0998,
+      "acierto_de_signo": 0.5572,
+      "media": 0.292,
+      "por_etapa": {
+        "apertura": {
+          "posiciones": 4637,
+          "correlacion": 0.0702
+        },
+        "medio": {
+          "posiciones": 2079,
+          "correlacion": 0.1356
+        },
+        "final": {
+          "posiciones": 271,
+          "correlacion": 0.1889
+        }
+      },
+      "costo_us_por_evaluacion": 7.95
+    },
+    "lineas_de_3": {
+      "correlacion": 0.207,
+      "acierto_de_signo": 0.691,
+      "media": 0.114,
+      "por_etapa": {
+        "apertura": {
+          "posiciones": 4637,
+          "correlacion": 0.1874
+        },
+        "medio": {
+          "posiciones": 2079,
+          "correlacion": 0.2646
+        },
+        "final": {
+          "posiciones": 271,
+          "correlacion": 0.3281
+        }
+      },
+      "costo_us_por_evaluacion": 7.79
+    },
+    "centro": {
+      "correlacion": 0.2225,
+      "acierto_de_signo": 0.6626,
+      "media": 0.062,
+      "por_etapa": {
+        "apertura": {
+          "posiciones": 4637,
+          "correlacion": 0.1984
+        },
+        "medio": {
+          "posiciones": 2079,
+          "correlacion": 0.2798
+        },
+        "final": {
+          "posiciones": 271,
+          "correlacion": 0.1701
+        }
+      },
+      "costo_us_por_evaluacion": 2.44
+    },
+    "capturas": {
+      "correlacion": 0.1124,
+      "acierto_de_signo": 0.5869,
+      "media": 0.054,
+      "por_etapa": {
+        "apertura": {
+          "posiciones": 4637,
+          "correlacion": 0.1434
+        },
+        "medio": {
+          "posiciones": 2079,
+          "correlacion": 0.1101
+        },
+        "final": {
+          "posiciones": 271,
+          "correlacion": -0.0015
+        }
+      },
+      "costo_us_por_evaluacion": 17.38
+    }
+  },
+  "duracion_total_s": 0.9
+}

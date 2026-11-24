@@ -128,3 +128,16 @@ y comparar las variantes en A06.
 - **Impacto o limitaciones** — `Stratego(a, d)` se asigna el jugador `(a % 2) + 1`, así que el oficial evalúa como si fuera el jugador 1 aunque juega como jugador 2. En CNT-002 esa configuración ganó menos contra un agente aleatorio que la coincidente (86 contra 94 victorias de 100 como jugador 2). Como Stratego es determinista, contra un agente determinista hay una sola partida posible por configuración; se usarán aperturas forzadas y su tamaño se definirá en C08. Además, el simulador tiene una regla de **captura**: una ficha rival encerrada en horizontal o diagonal pasa al jugador que la encierra, y esa captura puede completar un cuatro en línea. Las heurísticas deberán considerarlo.
 - **Evidencia** — `test_arena.py` (11 pruebas: reglas de captura, ausencia de captura vertical, determinismo de Stratego, equivalencia con `play_vs_other_agent`). CNT-001: el agente aleatorio gana 14 de 100 partidas contra el Stratego oficial. CNT-002: comparación de las cuatro combinaciones de constructor y turno.
 - **Actualización (2026-11-24)** — Juan Etchebarne confirmó que la asignación de jugador del Stratego oficial es **intencional**. Se mantiene la evaluación contra `load_enemy_agent()` sin cambios, y en el informe se describirá como una característica del rival, no como un error.
+
+### 2026-11-24 — COUNTER — Estructura de las funciones de evaluación
+
+- **Tarea** — C03.
+- **Decisión** — Se usa la estructura del teórico: `utilidad(s)` para estados finales (±1 000 000 por ganar o perder, 0 por empate) y, para los demás, `Eval(s) = Σ wᵢ·fᵢ(s)`, implementada en `ConnectFour/heuristicas.py`. Cada término se calcula como "jugador menos oponente", igual que `L_X − L_O` en el ta-te-ti de clase. Los términos son:
+  - `lineas_posibles`: el del ejemplo de clase, ventanas de 4 celdas que cada jugador todavía puede completar;
+  - `lineas_de_2` y `lineas_de_3`: ventanas con 2 o 3 fichas propias y el resto vacío;
+  - `centro`: fichas en la columna central;
+  - `capturas`: ternas horizontales o diagonales `[celda jugable, rival, propia]` que permiten capturar en la próxima jugada.
+- **Motivo** — Mantener la notación y el modelo lineal ponderado del curso, y tener términos separables para probarlos solos y combinados, como pide la letra. `capturas` se agregó porque el simulador tiene una regla de captura que un Connect Four clásico no tiene.
+- **Alternativas consideradas** — Reutilizar la heurística de Stratego: se descartó porque es el código del rival y depende de su número de jugador interno. Pesos distintos según la etapa de la partida: se pospone porque se aparta del modelo del curso; CNT-003 sugiere que podría servir.
+- **Impacto o limitaciones** — `FuncionEvaluacion` rechaza pesos que permitan que `|Eval|` alcance la utilidad de una victoria. Así se garantiza `Eval(ganar) > Eval(empate) > Eval(perder)`, el primer criterio de diseño del teórico.
+- **Evidencia** — `test_heuristicas.py` (14 pruebas). Una de ellas verifica en posiciones aleatorias que `capturas` coincide exactamente con las fichas que convierte el simulador. CNT-003 mide costo y correlación de cada término: `lineas_de_3` (r = 0,21) y `centro` (r = 0,22) son los más informativos y `lineas_posibles` tiene r = 0,11.
