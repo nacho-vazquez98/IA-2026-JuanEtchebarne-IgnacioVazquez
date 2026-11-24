@@ -1,0 +1,14 @@
+{
+  "id": "CNT-001",
+  "fecha": "2026-11-24T18:25:35",
+  "commit": "5fd8882",
+  "python": "3.11.8",
+  "plataforma": "Windows-10-10.0.26300-SP0",
+  "configuracion": {
+    "pregunta": "¿Qué resultado obtiene un agente sin estrategia contra Stratego oficial?",
+    "agente": "AgenteAleatorio(semilla) como jugador 1",
+    "rival": "load_enemy_agent() = Stratego(2, 4) como jugador 2",
+    "semillas": "0..99",
+    "apertura": "ninguna"
+  }
+}

@@ -1,0 +1,101 @@
+experimento,variante,partida,semilla,jugador_evaluado,ganador,desenlace,jugadas,tiempo_medio_s,tiempo_max_s,secuencia
+CNT-001,aleatorio_vs_stratego_oficial,0,0,1,2,derrota,6,1.1e-05,1.4e-05,6 5 3 4 6 2
+CNT-001,aleatorio_vs_stratego_oficial,1,1,1,2,derrota,6,9e-06,9e-06,1 0 4 3 6 2
+CNT-001,aleatorio_vs_stratego_oficial,2,2,1,2,derrota,12,7e-06,9e-06,6 5 6 4 0 6 0 2 0 0 2 3
+CNT-001,aleatorio_vs_stratego_oficial,3,3,1,2,derrota,6,6e-06,6e-06,1 0 4 3 4 2
+CNT-001,aleatorio_vs_stratego_oficial,4,4,1,2,derrota,8,6e-06,7e-06,1 0 2 3 0 4 5 6
+CNT-001,aleatorio_vs_stratego_oficial,5,5,1,2,derrota,10,8e-06,1.1e-05,4 6 2 3 5 5 2 1 6 0
+CNT-001,aleatorio_vs_stratego_oficial,6,6,1,1,victoria,9,6e-06,7e-06,6 5 4 1 6 5 0 4 3
+CNT-001,aleatorio_vs_stratego_oficial,7,7,1,2,derrota,16,6e-06,7e-06,2 6 1 3 3 4 5 3 0 4 0 2 6 4 4 3
+CNT-001,aleatorio_vs_stratego_oficial,8,8,1,2,derrota,16,6e-06,8e-06,1 0 2 3 3 4 1 0 1 1 5 0 0 5 0 6
+CNT-001,aleatorio_vs_stratego_oficial,9,9,1,2,derrota,14,5e-06,6e-06,3 0 4 5 2 6 2 1 1 2 1 0 6 3
+CNT-001,aleatorio_vs_stratego_oficial,10,10,1,2,derrota,8,5e-06,6e-06,4 6 0 3 3 2 3 5
+CNT-001,aleatorio_vs_stratego_oficial,11,11,1,1,victoria,15,6e-06,6e-06,3 0 6 3 4 5 6 6 6 3 3 5 3 5 4
+CNT-001,aleatorio_vs_stratego_oficial,12,12,1,1,victoria,5,5e-06,6e-06,3 0 2 4 5
+CNT-001,aleatorio_vs_stratego_oficial,13,13,1,2,derrota,8,5e-06,6e-06,2 6 2 2 5 4 5 3
+CNT-001,aleatorio_vs_stratego_oficial,14,14,1,2,derrota,16,7e-06,1.1e-05,0 3 4 2 5 5 6 6 5 0 4 4 1 6 2 3
+CNT-001,aleatorio_vs_stratego_oficial,15,15,1,2,derrota,6,5e-06,7e-06,1 0 0 2 4 3
+CNT-001,aleatorio_vs_stratego_oficial,16,16,1,1,victoria,15,6e-06,7e-06,2 6 3 4 3 5 2 5 3 6 1 3 3 1 0
+CNT-001,aleatorio_vs_stratego_oficial,17,17,1,2,derrota,24,6e-06,9e-06,4 6 3 5 6 2 2 1 2 5 2 4 1 5 6 4 5 2 5 4 4 5 6 6
+CNT-001,aleatorio_vs_stratego_oficial,18,18,1,2,derrota,8,6e-06,1e-05,1 0 0 2 5 0 3 4
+CNT-001,aleatorio_vs_stratego_oficial,19,19,1,2,derrota,16,5e-06,7e-06,5 6 0 4 6 6 4 4 0 5 4 6 1 1 3 2
+CNT-001,aleatorio_vs_stratego_oficial,20,20,1,2,derrota,10,6e-06,7e-06,5 6 5 4 6 6 6 5 1 5
+CNT-001,aleatorio_vs_stratego_oficial,21,21,1,2,derrota,6,5e-06,5e-06,1 0 3 2 5 4
+CNT-001,aleatorio_vs_stratego_oficial,22,22,1,2,derrota,8,6e-06,7e-06,1 0 1 2 0 4 4 3
+CNT-001,aleatorio_vs_stratego_oficial,23,23,1,2,derrota,10,5e-06,6e-06,6 5 2 4 6 6 0 1 0 3
+CNT-001,aleatorio_vs_stratego_oficial,24,24,1,2,derrota,6,6e-06,7e-06,5 6 3 4 6 2
+CNT-001,aleatorio_vs_stratego_oficial,25,25,1,2,derrota,12,6e-06,7e-06,3 0 6 3 6 6 6 4 0 5 1 2
+CNT-001,aleatorio_vs_stratego_oficial,26,26,1,2,derrota,18,5e-06,6e-06,5 6 1 4 5 5 1 2 3 0 4 2 4 3 0 3 1 4
+CNT-001,aleatorio_vs_stratego_oficial,27,27,1,2,derrota,6,5e-06,7e-06,5 6 3 4 5 2
+CNT-001,aleatorio_vs_stratego_oficial,28,28,1,2,derrota,8,5e-06,6e-06,0 3 5 5 1 4 4 6
+CNT-001,aleatorio_vs_stratego_oficial,29,29,1,1,victoria,19,6e-06,7e-06,4 6 0 3 2 1 4 5 6 3 4 4 2 5 0 6 4 1 2
+CNT-001,aleatorio_vs_stratego_oficial,30,30,1,2,derrota,8,6e-06,8e-06,4 6 6 6 2 3 4 5
+CNT-001,aleatorio_vs_stratego_oficial,31,31,1,2,derrota,14,6e-06,7e-06,0 3 3 3 0 6 6 3 3 6 1 0 5 4
+CNT-001,aleatorio_vs_stratego_oficial,32,32,1,2,derrota,10,5e-06,6e-06,0 3 1 3 1 3 2 4 5 3
+CNT-001,aleatorio_vs_stratego_oficial,33,33,1,2,derrota,8,5e-06,6e-06,4 6 1 3 5 2 1 0
+CNT-001,aleatorio_vs_stratego_oficial,34,34,1,2,derrota,6,5e-06,6e-06,4 6 2 3 4 5
+CNT-001,aleatorio_vs_stratego_oficial,35,35,1,2,derrota,6,5e-06,5e-06,4 6 2 3 6 5
+CNT-001,aleatorio_vs_stratego_oficial,36,36,1,2,derrota,12,5e-06,6e-06,2 6 0 1 0 3 6 3 6 3 2 3
+CNT-001,aleatorio_vs_stratego_oficial,37,37,1,2,derrota,22,6e-06,7e-06,5 6 4 3 0 2 4 4 5 6 6 2 5 5 6 4 5 4 4 5 0 3
+CNT-001,aleatorio_vs_stratego_oficial,38,38,1,2,derrota,6,5e-06,6e-06,5 6 3 4 3 2
+CNT-001,aleatorio_vs_stratego_oficial,39,39,1,2,derrota,20,6e-06,1e-05,1 0 2 3 3 4 0 1 1 1 1 2 3 0 5 3 4 5 0 2
+CNT-001,aleatorio_vs_stratego_oficial,40,40,1,1,victoria,11,6e-06,6e-06,3 0 4 5 4 6 0 4 1 5 2
+CNT-001,aleatorio_vs_stratego_oficial,41,41,1,1,victoria,21,6e-06,7e-06,3 0 2 4 1 5 1 1 3 0 4 2 5 3 2 5 4 0 2 5 3
+CNT-001,aleatorio_vs_stratego_oficial,42,42,1,2,derrota,10,5e-06,6e-06,5 6 0 4 0 0 5 6 2 3
+CNT-001,aleatorio_vs_stratego_oficial,43,43,1,2,derrota,8,5e-06,6e-06,0 3 2 4 5 0 6 1
+CNT-001,aleatorio_vs_stratego_oficial,44,44,1,1,victoria,19,5e-06,6e-06,3 0 4 5 4 6 5 4 6 3 0 3 1 3 3 4 1 5 2
+CNT-001,aleatorio_vs_stratego_oficial,45,45,1,2,derrota,14,5e-06,6e-06,2 6 3 4 3 5 2 5 0 3 2 2 2 4
+CNT-001,aleatorio_vs_stratego_oficial,46,46,1,2,derrota,10,5e-06,6e-06,0 3 3 3 0 6 4 2 4 5
+CNT-001,aleatorio_vs_stratego_oficial,47,47,1,2,derrota,14,7e-06,1.4e-05,2 6 0 1 3 3 4 5 3 4 4 5 2 3
+CNT-001,aleatorio_vs_stratego_oficial,48,48,1,2,derrota,6,6e-06,6e-06,4 6 2 3 1 5
+CNT-001,aleatorio_vs_stratego_oficial,49,49,1,2,derrota,6,5e-06,6e-06,0 3 2 4 3 1
+CNT-001,aleatorio_vs_stratego_oficial,50,50,1,2,derrota,20,5e-06,6e-06,3 0 6 3 2 4 2 5 5 4 1 4 5 2 3 1 6 1 2 3
+CNT-001,aleatorio_vs_stratego_oficial,51,51,1,2,derrota,6,6e-06,7e-06,1 0 6 2 4 3
+CNT-001,aleatorio_vs_stratego_oficial,52,52,1,2,derrota,8,6e-06,7e-06,2 6 0 1 5 4 4 3
+CNT-001,aleatorio_vs_stratego_oficial,53,53,1,2,derrota,16,6e-06,7e-06,4 6 6 6 1 3 3 2 4 3 5 5 3 4 5 5
+CNT-001,aleatorio_vs_stratego_oficial,54,54,1,1,victoria,13,5e-06,6e-06,1 0 3 2 4 5 2 2 3 1 3 0 3
+CNT-001,aleatorio_vs_stratego_oficial,55,55,1,2,derrota,8,5e-06,7e-06,0 3 1 3 1 3 5 3
+CNT-001,aleatorio_vs_stratego_oficial,56,56,1,1,victoria,7,5e-06,6e-06,6 5 4 1 0 5 3
+CNT-001,aleatorio_vs_stratego_oficial,57,57,1,2,derrota,6,5e-06,6e-06,0 3 2 4 4 1
+CNT-001,aleatorio_vs_stratego_oficial,58,58,1,2,derrota,8,5e-06,6e-06,4 6 1 3 1 2 5 0
+CNT-001,aleatorio_vs_stratego_oficial,59,59,1,2,derrota,8,7e-06,1e-05,1 0 0 2 5 0 3 4
+CNT-001,aleatorio_vs_stratego_oficial,60,60,1,2,derrota,8,6e-06,1e-05,2 6 2 2 4 3 1 5
+CNT-001,aleatorio_vs_stratego_oficial,61,61,1,2,derrota,20,6e-06,7e-06,3 0 1 2 4 5 1 6 6 3 2 4 2 5 2 5 6 3 5 4
+CNT-001,aleatorio_vs_stratego_oficial,62,62,1,2,derrota,8,6e-06,7e-06,4 6 1 3 0 2 6 5
+CNT-001,aleatorio_vs_stratego_oficial,63,63,1,2,derrota,20,6e-06,9e-06,3 0 3 6 2 4 2 5 3 5 5 6 0 3 3 2 5 5 0 4
+CNT-001,aleatorio_vs_stratego_oficial,64,64,1,2,derrota,20,7e-06,1.1e-05,3 0 0 4 5 5 4 6 3 0 4 6 5 6 0 4 1 2 2 6
+CNT-001,aleatorio_vs_stratego_oficial,65,65,1,1,victoria,17,6e-06,1e-05,3 0 2 4 2 5 4 5 6 2 1 6 3 4 3 6 4
+CNT-001,aleatorio_vs_stratego_oficial,66,66,1,2,derrota,6,5e-06,7e-06,0 3 2 4 3 1
+CNT-001,aleatorio_vs_stratego_oficial,67,67,1,2,derrota,20,6e-06,8e-06,0 3 0 3 6 3 3 6 3 0 3 6 2 4 5 2 4 4 4 5
+CNT-001,aleatorio_vs_stratego_oficial,68,68,1,2,derrota,6,5e-06,6e-06,5 6 3 4 5 2
+CNT-001,aleatorio_vs_stratego_oficial,69,69,1,2,derrota,20,6e-06,8e-06,5 6 0 4 0 0 6 6 1 5 0 1 4 4 2 2 2 5 6 3
+CNT-001,aleatorio_vs_stratego_oficial,70,70,1,2,derrota,8,6e-06,7e-06,0 3 2 4 5 0 3 6
+CNT-001,aleatorio_vs_stratego_oficial,71,71,1,2,derrota,6,5e-06,6e-06,2 6 4 3 4 5
+CNT-001,aleatorio_vs_stratego_oficial,72,72,1,1,victoria,17,6e-06,8e-06,0 3 6 6 4 2 5 6 1 3 2 4 5 2 4 3 4
+CNT-001,aleatorio_vs_stratego_oficial,73,73,1,2,derrota,12,5e-06,6e-06,2 6 0 1 4 5 3 5 4 6 1 3
+CNT-001,aleatorio_vs_stratego_oficial,74,74,1,1,victoria,23,7e-06,9e-06,6 5 4 1 4 6 6 4 0 1 2 3 0 2 6 0 2 2 1 3 6 6 1
+CNT-001,aleatorio_vs_stratego_oficial,75,75,1,1,victoria,19,6e-06,7e-06,3 0 4 5 3 6 3 3 0 0 5 6 6 2 4 2 5 1 6
+CNT-001,aleatorio_vs_stratego_oficial,76,76,1,2,derrota,18,6e-06,7e-06,2 6 3 4 3 5 1 0 2 5 0 2 3 4 6 5 1 4
+CNT-001,aleatorio_vs_stratego_oficial,77,77,1,2,derrota,10,6e-06,7e-06,6 5 2 4 2 1 1 0 1 3
+CNT-001,aleatorio_vs_stratego_oficial,78,78,1,2,derrota,8,5e-06,6e-06,6 5 1 4 0 2 2 3
+CNT-001,aleatorio_vs_stratego_oficial,79,79,1,2,derrota,6,5e-06,6e-06,1 0 3 2 2 4
+CNT-001,aleatorio_vs_stratego_oficial,80,80,1,2,derrota,14,6e-06,9e-06,2 6 3 4 4 5 5 4 6 6 3 5 2 5
+CNT-001,aleatorio_vs_stratego_oficial,81,81,1,2,derrota,16,5e-06,6e-06,4 6 6 6 3 5 2 3 4 4 4 2 3 2 3 5
+CNT-001,aleatorio_vs_stratego_oficial,82,82,1,2,derrota,6,5e-06,5e-06,1 0 6 2 3 4
+CNT-001,aleatorio_vs_stratego_oficial,83,83,1,2,derrota,12,5e-06,6e-06,3 0 6 3 6 6 3 4 0 5 1 2
+CNT-001,aleatorio_vs_stratego_oficial,84,84,1,2,derrota,6,5e-06,6e-06,5 6 2 4 6 3
+CNT-001,aleatorio_vs_stratego_oficial,85,85,1,2,derrota,6,5e-06,6e-06,1 0 5 2 4 3
+CNT-001,aleatorio_vs_stratego_oficial,86,86,1,2,derrota,14,6e-06,7e-06,6 5 6 4 0 6 4 5 6 4 2 3 5 1
+CNT-001,aleatorio_vs_stratego_oficial,87,87,1,2,derrota,12,6e-06,7e-06,1 0 5 2 1 5 6 1 6 1 4 3
+CNT-001,aleatorio_vs_stratego_oficial,88,88,1,2,derrota,6,6e-06,7e-06,3 0 1 2 2 4
+CNT-001,aleatorio_vs_stratego_oficial,89,89,1,2,derrota,16,6e-06,7e-06,0 3 6 6 4 2 5 6 2 4 1 5 2 4 6 3
+CNT-001,aleatorio_vs_stratego_oficial,90,90,1,2,derrota,8,6e-06,6e-06,1 0 5 2 0 0 3 4
+CNT-001,aleatorio_vs_stratego_oficial,91,91,1,2,derrota,6,6e-06,7e-06,0 3 4 2 1 5
+CNT-001,aleatorio_vs_stratego_oficial,92,92,1,2,derrota,18,6e-06,7e-06,3 0 4 5 4 6 4 4 4 3 6 2 4 2 2 3 6 1
+CNT-001,aleatorio_vs_stratego_oficial,93,93,1,2,derrota,6,7e-06,9e-06,6 5 3 4 4 2
+CNT-001,aleatorio_vs_stratego_oficial,94,94,1,2,derrota,8,6e-06,7e-06,4 6 1 3 0 2 6 5
+CNT-001,aleatorio_vs_stratego_oficial,95,95,1,2,derrota,14,6e-06,7e-06,6 5 4 1 4 6 5 3 4 2 6 4 6 0
+CNT-001,aleatorio_vs_stratego_oficial,96,96,1,2,derrota,24,7e-06,1.2e-05,2 6 2 2 5 4 3 2 1 0 0 3 6 1 2 0 6 6 0 1 5 0 0 1
+CNT-001,aleatorio_vs_stratego_oficial,97,97,1,2,derrota,6,5e-06,6e-06,1 0 3 2 6 4
+CNT-001,aleatorio_vs_stratego_oficial,98,98,1,2,derrota,6,6e-06,7e-06,2 6 4 3 6 5
+CNT-001,aleatorio_vs_stratego_oficial,99,99,1,2,derrota,24,7e-06,1e-05,3 0 3 6 1 2 4 3 1 2 1 0 1 1 1 4 0 0 3 4 6 2 4 2
