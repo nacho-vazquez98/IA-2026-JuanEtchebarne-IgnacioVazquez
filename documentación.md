@@ -80,3 +80,33 @@ y claves repetibles para indexar ambas tablas Q en las 769 observaciones de
 las dos trayectorias. Las corridas verifican el contrato y muestran rangos
 de ejemplo. Queda pendiente medir cobertura y aprendizaje con más semillas
 y comparar las variantes en A06.
+
+### 2026-11-22 — ACROBAT — Actualización Q-Learning y fin de episodio
+
+- **Tarea** — A04.
+- **Representación** — Una tabla densa `float64` inicializada en cero, con las
+  dimensiones del discretizador y un eje final para las acciones de Acrobot.
+  El agente usa las claves de A03 tanto para elegir acciones como para actualizar
+  la tabla a partir de cada transición observada.
+- **Exploración** — En cada paso, con probabilidad ε se elige cualquiera de las
+  acciones uniformemente. En el resto de los casos se escoge un máximo de Q,
+  con desempate uniforme para evitar favorecer un índice cuando varios valores
+  coinciden. El agente tiene su propio generador con semilla opcional. Quien
+  ejecuta el episodio aporta ε, lo que permite variar su valor entre episodios
+  y elegir solo máximos con ε = 0.
+- **Objetivo de la actualización** — Con tasa α, se incorpora una fracción α de
+  la diferencia entre el objetivo y el valor Q actual. El objetivo es
+  `recompensa + γ × max Q(estado_siguiente, ·)` si el ambiente sigue en un
+  estado no terminal y `recompensa` si Gymnasium indica `terminated`.
+  Un truncamiento por límite externo cierra el episodio y conserva el valor
+  del estado siguiente. Si ambas banderas son verdaderas, el estado es terminal.
+- **Evidencia** — `poetry run python -B -m unittest -v` desde `Acrobot/` pasó
+  11 pruebas. Se verificaron la actualización numérica, las tres combinaciones
+  de fin de episodio, la elección de acciones legales en los extremos de ε y la
+  igualdad de la tabla tras repetir la corrida con cada grilla. En una
+  comprobación sin renderizado con semilla 42 para agente y entorno, α = 0.5,
+  γ = 0.9 y ε = 0.2, ambas grillas completaron 700 pasos por truncamiento con
+  retorno −700. La directa actualizó 322 celdas a valores distintos de cero
+  (0.072 s) y la angular 477 (0.071 s). Estas corridas verifican que las
+  actualizaciones llegan a la tabla. La comparación de desempeño corresponde a
+  A06, usando el protocolo de entrenamiento y evaluación de A05.
