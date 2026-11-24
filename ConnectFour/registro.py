@@ -17,8 +17,9 @@ def commit_actual():
             ["git", "rev-parse", "--short", "HEAD"],
             cwd=RAIZ_REPO, capture_output=True, text=True, check=True,
         )
+        # Los resultados de experimentos no cuentan como cambios de código.
         sucio = subprocess.run(
-            ["git", "status", "--porcelain"],
+            ["git", "status", "--porcelain", "--", ".", ":(exclude)experimentos"],
             cwd=RAIZ_REPO, capture_output=True, text=True, check=True,
         ).stdout.strip()
         return salida.stdout.strip() + ("-sucio" if sucio else "")

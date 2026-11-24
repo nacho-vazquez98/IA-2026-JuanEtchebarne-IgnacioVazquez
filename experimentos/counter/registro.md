@@ -53,3 +53,7 @@ Registro de **todas** las corridas de COUNTER, incluidas las exploratorias, fall
 #### Actualización de CNT-002 (2026-11-24)
 
 Juan Etchebarne confirmó que la asignación de jugador del Stratego oficial es **intencional**. Ya no queda nada pendiente sobre este punto. Las conclusiones de CNT-002 se mantienen: el rival oficial es la configuración "no coincidente" y se lo usa sin modificaciones.
+
+#### Nota sobre el commit registrado en CNT-002 (2026-11-24)
+
+El `config.json` de CNT-002 indica `5fd8882-sucio`. El código era el del commit `5fd8882` sin cambios. La marca se debió a que los resultados de CNT-001 todavía no estaban commiteados. Desde el commit que agrega esta nota, `registro.commit_actual()` ignora la carpeta `experimentos/` al decidir si el árbol tiene cambios.
