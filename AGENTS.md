@@ -35,6 +35,7 @@ Este archivo rige para **Claude Code y Codex**. En Codex, `AGENTS.md` debe remit
 ## Decisiones y documentación
 - Mantener en la raíz el archivo **`documentación.md`**, versionado y compartido. Registrar durante cada feature las **decisiones técnicas importantes**: qué se decidió, por qué, alternativas consideradas, consecuencias y evidencia disponible (pruebas/resultados), sin inventar información. Ejemplos: discretización, política de exploración, hiperparámetros, planificación de Dyna-Q, heurísticas, profundidades, modelo de adversario, métricas y persistencia.
 - **Ante la duda de si corresponde documentar una decisión, consultar al usuario antes de incluirla.** Evitar registrar acciones triviales. Agregar entradas sin reescribir las del otro agente; incluir actualizaciones de `documentación.md` en el commit de la feature.
+- `documentación.md` está dividido en secciones por ejercicio: **Decisiones comunes**, **ACROBAT** y **COUNTER**. Cada agente agrega sus entradas **al final de la sección del ejercicio en el que trabaja**. Las decisiones que afectan a ambos proyectos van en *Decisiones comunes*. No se editan ni reordenan las secciones del otro ejercicio. Así se evitan conflictos entre ramas paralelas.
 - `documentación.md` es una **bitácora de apoyo**, no reemplaza el informe final, que los estudiantes deben revisar, comprender y elaborar.
 
 ## Implementación y validación

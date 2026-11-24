@@ -12,6 +12,8 @@ Este archivo es una **bitácora técnica compartida** para ACROBAT y COUNTER. Su
 
 ## Decisiones
 
+Cada entrada va en la sección de su proyecto: **ACROBAT** o **COUNTER**. Las decisiones que afectan a los dos proyectos van en **Decisiones comunes**. Las entradas nuevas se agregan al final de la sección correspondiente, así cada integrante edita solo la suya.
+
 <!--
 Modelo sugerido para futuras entradas:
 
@@ -24,12 +26,16 @@ Modelo sugerido para futuras entradas:
 - **Evidencia / cómo se verificó:** ...
 -->
 
+## Decisiones comunes
+
 ### 2026-11-17 — Entornos de Poetry independientes
 
 - **Tarea** — P03.
 - **Decisión** — Conservar los manifiestos, archivos de bloqueo y configuraciones de Poetry provistos para Acrobot y Connect Four. Cada proyecto usa una `.venv` local y mantiene sus versiones resueltas en su propio `poetry.lock`.
 - **Motivo** — La consigna pide dos entornos separados. Compartir un entorno o un archivo de bloqueo acoplaría las dependencias. Por ejemplo, Acrobot declara `pygame` para el modo gráfico y Connect Four renderiza el tablero en la terminal.
 - **Verificación** — Los dos archivos de bloqueo coinciden con las declaraciones de sus manifiestos, y ambas configuraciones habilitan `.venv` dentro del proyecto. La instalación y la ejecución de los simuladores corresponden a P04.
+
+## ACROBAT — Acrobot (Q-Learning y Dyna-Q)
 
 ### 2026-11-17 — ACROBAT — Contrato de Acrobot y discretizaciones iniciales
 
@@ -80,6 +86,8 @@ y claves repetibles para indexar ambas tablas Q en las 769 observaciones de
 las dos trayectorias. Las corridas verifican el contrato y muestran rangos
 de ejemplo. Queda pendiente medir cobertura y aprendizaje con más semillas
 y comparar las variantes en A06.
+
+## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas
 
