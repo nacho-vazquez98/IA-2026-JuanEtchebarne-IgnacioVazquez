@@ -1,0 +1,401 @@
+experimento,variante,partida,semilla,jugador_evaluado,ganador,desenlace,jugadas,tiempo_medio_s,tiempo_max_s,secuencia
+CNT-002,"Stratego(1,4)_como_jugador_1",0,0,1,1,victoria,17,0.204697,0.284048,6 6 3 3 6 6 3 3 0 0 6 2 4 4 3 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",1,1,1,1,victoria,7,0.117883,0.125347,6 1 2 4 3 6 5
+CNT-002,"Stratego(1,4)_como_jugador_1",2,2,1,1,victoria,15,0.160556,0.267977,6 6 3 6 6 0 3 0 0 0 3 2 4 6 1
+CNT-002,"Stratego(1,4)_como_jugador_1",3,3,1,1,victoria,7,0.117625,0.126299,6 1 2 4 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",4,4,1,1,victoria,9,0.138049,0.157238,6 1 2 2 3 0 3 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",5,5,1,2,derrota,6,0.105727,0.126865,6 4 3 2 3 5
+CNT-002,"Stratego(1,4)_como_jugador_1",6,6,1,1,victoria,7,0.129313,0.149844,6 6 3 4 2 6 5
+CNT-002,"Stratego(1,4)_como_jugador_1",7,7,1,1,victoria,7,0.119249,0.142203,6 2 3 1 4 3 5
+CNT-002,"Stratego(1,4)_como_jugador_1",8,8,1,1,victoria,7,0.125131,0.13757,6 1 2 2 3 3 0
+CNT-002,"Stratego(1,4)_como_jugador_1",9,9,1,2,derrota,10,0.120679,0.133395,6 3 6 4 5 2 3 2 4 1
+CNT-002,"Stratego(1,4)_como_jugador_1",10,10,1,1,victoria,7,0.127338,0.155233,6 4 3 0 2 3 5
+CNT-002,"Stratego(1,4)_como_jugador_1",11,11,1,2,derrota,28,0.097205,0.158397,6 3 6 6 6 4 2 6 1 6 5 3 3 3 3 4 1 4 2 1 4 1 2 4 2 3 2 5
+CNT-002,"Stratego(1,4)_como_jugador_1",12,12,1,2,derrota,6,0.154279,0.193677,6 3 6 2 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",13,13,1,1,victoria,7,0.162922,0.190612,6 2 3 2 4 5 1
+CNT-002,"Stratego(1,4)_como_jugador_1",14,14,1,1,victoria,11,0.159978,0.230825,6 0 3 4 2 5 3 6 3 5 3
+CNT-002,"Stratego(1,4)_como_jugador_1",15,15,1,1,victoria,7,0.12332,0.149345,6 1 2 0 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",16,16,1,1,victoria,7,0.12783,0.138806,6 2 3 3 4 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",17,17,1,1,victoria,7,0.146789,0.168208,6 4 3 3 2 6 5
+CNT-002,"Stratego(1,4)_como_jugador_1",18,18,1,1,victoria,7,0.124934,0.145804,6 1 2 0 3 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",19,19,1,1,victoria,11,0.14616,0.18297,6 5 4 0 5 6 5 4 2 0 3
+CNT-002,"Stratego(1,4)_como_jugador_1",20,20,1,1,victoria,13,0.125831,0.143432,6 5 4 5 6 6 5 6 4 1 4 2 4
+CNT-002,"Stratego(1,4)_como_jugador_1",21,21,1,1,victoria,17,0.122133,0.199654,6 1 2 3 3 5 4 3 0 5 5 2 4 3 4 6 4
+CNT-002,"Stratego(1,4)_como_jugador_1",22,22,1,1,victoria,9,0.136739,0.157765,6 1 2 1 3 0 1 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",23,23,1,1,victoria,7,0.127411,0.146638,6 6 3 2 4 6 5
+CNT-002,"Stratego(1,4)_como_jugador_1",24,24,1,1,victoria,5,0.124371,0.137549,6 5 4 3 2
+CNT-002,"Stratego(1,4)_como_jugador_1",25,25,1,1,victoria,15,0.116162,0.156701,6 3 6 6 6 6 3 6 3 0 3 1 2 2 4
+CNT-002,"Stratego(1,4)_como_jugador_1",26,26,1,1,victoria,15,0.121066,0.15051,6 5 4 1 5 5 6 1 4 3 4 4 6 4 6
+CNT-002,"Stratego(1,4)_como_jugador_1",27,27,1,1,victoria,5,0.118187,0.127195,6 5 4 3 2
+CNT-002,"Stratego(1,4)_como_jugador_1",28,28,1,1,victoria,5,0.121059,0.124438,6 0 3 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",29,29,1,1,victoria,7,0.128896,0.151394,6 4 3 0 2 2 5
+CNT-002,"Stratego(1,4)_como_jugador_1",30,30,1,1,victoria,7,0.130226,0.151899,6 4 3 6 2 2 5
+CNT-002,"Stratego(1,4)_como_jugador_1",31,31,1,1,victoria,15,0.163328,0.199699,6 0 3 3 0 0 1 6 2 3 6 1 5 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",32,32,1,1,victoria,13,0.137833,0.17825,6 0 3 1 1 1 0 2 4 5 3 1 2
+CNT-002,"Stratego(1,4)_como_jugador_1",33,33,1,1,victoria,7,0.123504,0.142955,6 4 3 1 2 5 0
+CNT-002,"Stratego(1,4)_como_jugador_1",34,34,1,2,derrota,12,0.110031,0.133738,6 4 3 2 3 4 2 0 3 6 4 1
+CNT-002,"Stratego(1,4)_como_jugador_1",35,35,1,2,derrota,8,0.102327,0.132443,6 4 3 2 3 6 6 1
+CNT-002,"Stratego(1,4)_como_jugador_1",36,36,1,1,victoria,7,0.127092,0.147038,6 2 3 0 4 0 5
+CNT-002,"Stratego(1,4)_como_jugador_1",37,37,1,1,victoria,15,0.114611,0.14704,6 5 4 4 4 0 4 4 4 6 1 6 2 6 3
+CNT-002,"Stratego(1,4)_como_jugador_1",38,38,1,1,victoria,5,0.114915,0.12329,6 5 4 3 2
+CNT-002,"Stratego(1,4)_como_jugador_1",39,39,1,1,victoria,7,0.126088,0.14196,6 1 2 2 3 3 0
+CNT-002,"Stratego(1,4)_como_jugador_1",40,40,1,2,derrota,10,0.127097,0.142388,6 3 6 4 5 4 2 0 4 1
+CNT-002,"Stratego(1,4)_como_jugador_1",41,41,1,1,victoria,19,0.137259,0.21597,6 3 6 2 4 1 5 1 0 3 0 4 2 5 3 2 4 4 3
+CNT-002,"Stratego(1,4)_como_jugador_1",42,42,1,1,victoria,11,0.135205,0.169213,6 5 4 0 5 0 5 5 2 2 3
+CNT-002,"Stratego(1,4)_como_jugador_1",43,43,1,1,victoria,7,0.12981,0.144366,6 0 3 2 4 5 1
+CNT-002,"Stratego(1,4)_como_jugador_1",44,44,1,2,derrota,16,0.149958,0.221457,6 3 6 4 5 4 2 5 1 6 6 0 4 1 2 3
+CNT-002,"Stratego(1,4)_como_jugador_1",45,45,1,1,victoria,7,0.125254,0.138642,6 2 3 3 4 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",46,46,1,1,victoria,11,0.140596,0.170194,6 0 3 3 0 0 1 4 2 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",47,47,1,1,victoria,7,0.126543,0.142788,6 2 3 0 4 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",48,48,1,2,derrota,6,0.106525,0.128657,6 4 3 2 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",49,49,1,1,victoria,7,0.126329,0.1385,6 0 3 2 4 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",50,50,1,1,victoria,15,0.147527,0.193987,6 3 6 6 6 2 4 2 5 5 0 1 3 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",51,51,1,1,victoria,7,0.124846,0.14005,6 1 2 6 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",52,52,1,1,victoria,7,0.149467,0.170465,6 2 3 0 4 5 1
+CNT-002,"Stratego(1,4)_como_jugador_1",53,53,1,1,victoria,7,0.137854,0.173039,6 4 3 6 2 1 5
+CNT-002,"Stratego(1,4)_como_jugador_1",54,54,1,2,derrota,6,0.103804,0.125293,6 1 2 3 3 4
+CNT-002,"Stratego(1,4)_como_jugador_1",55,55,1,1,victoria,9,0.136813,0.158796,6 0 3 1 1 1 0 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",56,56,1,1,victoria,7,0.136576,0.168978,6 6 3 4 2 0 5
+CNT-002,"Stratego(1,4)_como_jugador_1",57,57,1,1,victoria,7,0.123002,0.133177,6 0 3 2 4 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",58,58,1,1,victoria,7,0.117539,0.125167,6 4 3 1 2 1 5
+CNT-002,"Stratego(1,4)_como_jugador_1",59,59,1,1,victoria,7,0.123295,0.14733,6 1 2 0 3 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",60,60,1,1,victoria,7,0.129591,0.154466,6 2 3 2 4 4 1
+CNT-002,"Stratego(1,4)_como_jugador_1",61,61,1,1,victoria,19,0.143887,0.211165,6 3 6 1 2 4 2 1 4 6 4 2 4 2 3 2 3 6 1
+CNT-002,"Stratego(1,4)_como_jugador_1",62,62,1,1,victoria,7,0.14026,0.196394,6 4 3 1 2 0 5
+CNT-002,"Stratego(1,4)_como_jugador_1",63,63,1,1,victoria,7,0.136128,0.166453,6 3 6 3 6 2 6
+CNT-002,"Stratego(1,4)_como_jugador_1",64,64,1,1,victoria,7,0.135766,0.195326,6 3 6 0 6 5 6
+CNT-002,"Stratego(1,4)_como_jugador_1",65,65,1,2,derrota,18,0.148325,0.202509,6 3 6 2 4 2 5 4 1 6 1 1 2 3 1 3 0 4
+CNT-002,"Stratego(1,4)_como_jugador_1",66,66,1,1,victoria,7,0.129845,0.144794,6 0 3 2 4 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",67,67,1,1,victoria,17,0.16176,0.240635,6 0 3 0 3 6 0 3 6 3 3 3 6 2 4 5 1
+CNT-002,"Stratego(1,4)_como_jugador_1",68,68,1,1,victoria,5,0.129177,0.149802,6 5 4 3 2
+CNT-002,"Stratego(1,4)_como_jugador_1",69,69,1,1,victoria,9,0.147725,0.178393,6 5 4 0 5 0 5 6 5
+CNT-002,"Stratego(1,4)_como_jugador_1",70,70,1,1,victoria,7,0.16023,0.201007,6 0 3 2 4 5 1
+CNT-002,"Stratego(1,4)_como_jugador_1",71,71,1,1,victoria,17,0.110468,0.139987,6 2 3 4 3 4 2 6 4 0 2 2 1 1 1 6 0
+CNT-002,"Stratego(1,4)_como_jugador_1",72,72,1,1,victoria,11,0.163184,0.218236,6 0 3 6 3 4 2 5 3 1 3
+CNT-002,"Stratego(1,4)_como_jugador_1",73,73,1,1,victoria,7,0.126216,0.131809,6 2 3 0 4 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",74,74,1,1,victoria,7,0.141442,0.165267,6 6 3 4 2 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",75,75,1,1,victoria,15,0.125213,0.149428,6 3 6 4 5 3 2 3 0 0 0 5 2 6 4
+CNT-002,"Stratego(1,4)_como_jugador_1",76,76,1,1,victoria,7,0.131009,0.170136,6 2 3 3 4 3 1
+CNT-002,"Stratego(1,4)_como_jugador_1",77,77,1,1,victoria,7,0.124907,0.136766,6 6 3 2 4 2 1
+CNT-002,"Stratego(1,4)_como_jugador_1",78,78,1,1,victoria,11,0.154871,0.224312,6 6 3 1 2 0 3 2 2 5 4
+CNT-002,"Stratego(1,4)_como_jugador_1",79,79,1,2,derrota,10,0.102732,0.152858,6 1 2 3 3 2 4 4 5 1
+CNT-002,"Stratego(1,4)_como_jugador_1",80,80,1,1,victoria,7,0.128445,0.14337,6 2 3 3 4 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",81,81,1,1,victoria,7,0.12296,0.144752,6 4 3 6 2 3 5
+CNT-002,"Stratego(1,4)_como_jugador_1",82,82,1,1,victoria,7,0.128989,0.150133,6 1 2 6 3 3 0
+CNT-002,"Stratego(1,4)_como_jugador_1",83,83,1,1,victoria,23,0.14196,0.278727,6 3 6 6 6 6 3 3 6 0 3 1 2 3 0 0 4 0 4 5 2 1 5
+CNT-002,"Stratego(1,4)_como_jugador_1",84,84,1,1,victoria,5,0.122577,0.141843,6 5 4 2 3
+CNT-002,"Stratego(1,4)_como_jugador_1",85,85,1,1,victoria,7,0.170831,0.201963,6 1 2 5 3 4 0
+CNT-002,"Stratego(1,4)_como_jugador_1",86,86,1,1,victoria,11,0.148056,0.191469,6 6 3 6 6 0 3 4 2 6 5
+CNT-002,"Stratego(1,4)_como_jugador_1",87,87,1,1,victoria,7,0.137659,0.18858,6 1 2 5 3 1 4
+CNT-002,"Stratego(1,4)_como_jugador_1",88,88,1,1,victoria,9,0.137672,0.170244,6 3 6 1 2 2 4 1 0
+CNT-002,"Stratego(1,4)_como_jugador_1",89,89,1,1,victoria,21,0.157673,0.22635,6 0 3 6 3 4 2 5 3 2 2 1 4 2 4 6 4 0 0 1 3
+CNT-002,"Stratego(1,4)_como_jugador_1",90,90,1,1,victoria,7,0.129504,0.148041,6 1 2 5 3 0 4
+CNT-002,"Stratego(1,4)_como_jugador_1",91,91,1,1,victoria,7,0.139448,0.163425,6 0 3 4 2 1 5
+CNT-002,"Stratego(1,4)_como_jugador_1",92,92,1,2,derrota,10,0.127508,0.149243,6 3 6 4 5 4 2 4 6 4
+CNT-002,"Stratego(1,4)_como_jugador_1",93,93,1,1,victoria,19,0.157636,0.203693,6 6 3 3 6 4 2 5 5 2 4 0 3 0 1 2 1 1 4
+CNT-002,"Stratego(1,4)_como_jugador_1",94,94,1,1,victoria,7,0.133483,0.158863,6 4 3 1 2 0 5
+CNT-002,"Stratego(1,4)_como_jugador_1",95,95,1,1,victoria,7,0.130596,0.143962,6 6 3 4 2 4 5
+CNT-002,"Stratego(1,4)_como_jugador_1",96,96,1,1,victoria,7,0.148362,0.170101,6 2 3 2 4 5 1
+CNT-002,"Stratego(1,4)_como_jugador_1",97,97,1,2,derrota,16,0.100348,0.123869,6 1 2 3 3 6 6 2 4 6 4 6 5 6 4 0
+CNT-002,"Stratego(1,4)_como_jugador_1",98,98,1,1,victoria,19,0.143087,0.199503,6 2 3 4 3 6 6 0 1 2 4 3 4 0 5 3 2 2 1
+CNT-002,"Stratego(1,4)_como_jugador_1",99,99,1,1,victoria,7,0.135612,0.156488,6 3 6 3 6 1 6
+CNT-002,"Stratego(2,4)_como_jugador_1",0,0,1,1,victoria,7,0.125526,0.161792,6 6 5 3 4 6 2
+CNT-002,"Stratego(2,4)_como_jugador_1",1,1,1,1,victoria,5,0.129678,0.142717,6 1 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",2,2,1,1,victoria,11,0.128352,0.150769,6 6 5 6 4 0 4 0 4 0 3
+CNT-002,"Stratego(2,4)_como_jugador_1",3,3,1,1,victoria,5,0.133048,0.159642,6 1 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",4,4,1,1,victoria,7,0.12238,0.148607,6 1 5 2 4 0 3
+CNT-002,"Stratego(2,4)_como_jugador_1",5,5,1,1,victoria,5,0.118283,0.131991,6 4 5 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",6,6,1,1,victoria,5,0.118626,0.129174,6 6 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",7,7,1,1,victoria,15,0.146303,0.18424,6 2 5 1 4 3 0 5 6 0 4 0 2 6 3
+CNT-002,"Stratego(2,4)_como_jugador_1",8,8,1,1,victoria,19,0.152031,0.205933,6 1 5 2 4 3 0 1 5 1 1 5 3 0 4 0 3 1 2
+CNT-002,"Stratego(2,4)_como_jugador_1",9,9,1,1,victoria,7,0.114035,0.137117,6 3 6 4 6 2 6
+CNT-002,"Stratego(2,4)_como_jugador_1",10,10,1,1,victoria,5,0.11259,0.1212,6 4 5 0 3
+CNT-002,"Stratego(2,4)_como_jugador_1",11,11,1,1,victoria,21,0.112984,0.173524,6 3 6 6 5 4 1 6 5 6 6 3 3 3 3 4 2 4 4 1 5
+CNT-002,"Stratego(2,4)_como_jugador_1",12,12,1,1,victoria,7,0.115504,0.129834,6 3 6 2 6 5 6
+CNT-002,"Stratego(2,4)_como_jugador_1",13,13,1,1,victoria,9,0.126708,0.150825,6 2 5 2 5 5 4 5 3
+CNT-002,"Stratego(2,4)_como_jugador_1",14,14,1,1,victoria,5,0.113281,0.125127,6 0 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",15,15,1,1,victoria,7,0.117636,0.125472,6 1 5 0 4 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",16,16,1,1,victoria,15,0.136643,0.165729,6 2 5 3 4 3 3 2 5 3 1 1 5 3 5
+CNT-002,"Stratego(2,4)_como_jugador_1",17,17,1,1,victoria,15,0.145463,0.213419,6 4 5 3 1 6 3 2 0 2 3 2 4 1 5
+CNT-002,"Stratego(2,4)_como_jugador_1",18,18,1,1,victoria,9,0.110911,0.121923,6 1 5 0 4 5 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",19,19,1,1,victoria,9,0.135771,0.155904,6 5 4 0 5 6 4 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",20,20,1,1,victoria,11,0.124836,0.163827,6 5 4 5 1 6 4 6 4 1 3
+CNT-002,"Stratego(2,4)_como_jugador_1",21,21,1,1,victoria,7,0.138244,0.189997,6 1 5 3 2 5 4
+CNT-002,"Stratego(2,4)_como_jugador_1",22,22,1,1,victoria,9,0.126282,0.151386,6 1 5 1 4 0 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",23,23,1,1,victoria,9,0.146128,0.166421,6 6 5 2 5 6 4 0 3
+CNT-002,"Stratego(2,4)_como_jugador_1",24,24,1,1,victoria,5,0.118275,0.124526,6 5 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",25,25,1,1,victoria,9,0.14951,0.186576,6 3 6 6 5 6 4 6 2
+CNT-002,"Stratego(2,4)_como_jugador_1",26,26,1,1,victoria,9,0.119937,0.139141,6 5 4 1 5 5 6 1 3
+CNT-002,"Stratego(2,4)_como_jugador_1",27,27,1,1,victoria,5,0.110782,0.120605,6 5 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",28,28,1,1,victoria,11,0.124737,0.141865,6 0 5 5 4 1 4 4 6 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",29,29,1,1,victoria,5,0.127578,0.137669,6 4 5 0 3
+CNT-002,"Stratego(2,4)_como_jugador_1",30,30,1,1,victoria,5,0.117423,0.121119,6 4 5 6 3
+CNT-002,"Stratego(2,4)_como_jugador_1",31,31,1,1,victoria,9,0.155274,0.223848,6 0 5 3 5 0 4 6 2
+CNT-002,"Stratego(2,4)_como_jugador_1",32,32,1,1,victoria,9,0.136575,0.164468,6 0 5 1 4 1 5 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",33,33,1,1,victoria,5,0.117696,0.128923,6 4 5 1 3
+CNT-002,"Stratego(2,4)_como_jugador_1",34,34,1,1,victoria,5,0.128518,0.150835,6 4 5 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",35,35,1,1,victoria,5,0.120213,0.131402,6 4 5 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",36,36,1,1,victoria,9,0.137685,0.164954,6 2 5 0 1 0 3 6 4
+CNT-002,"Stratego(2,4)_como_jugador_1",37,37,1,1,victoria,9,0.130406,0.172528,6 5 4 4 4 0 6 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",38,38,1,1,victoria,5,0.121789,0.129245,6 5 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",39,39,1,1,victoria,13,0.152766,0.192176,6 1 5 2 4 3 0 0 5 1 5 1 5
+CNT-002,"Stratego(2,4)_como_jugador_1",40,40,1,1,victoria,7,0.122801,0.135801,6 3 6 4 6 4 6
+CNT-002,"Stratego(2,4)_como_jugador_1",41,41,1,1,victoria,7,0.127715,0.187692,6 3 6 2 6 1 6
+CNT-002,"Stratego(2,4)_como_jugador_1",42,42,1,1,victoria,11,0.128617,0.163305,6 5 4 0 5 0 6 5 4 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",43,43,1,1,victoria,9,0.137922,0.181001,6 0 5 2 1 5 3 6 4
+CNT-002,"Stratego(2,4)_como_jugador_1",44,44,1,1,victoria,7,0.127553,0.142237,6 3 6 4 6 4 6
+CNT-002,"Stratego(2,4)_como_jugador_1",45,45,1,1,victoria,15,0.12949,0.156041,6 2 5 3 4 3 3 2 5 0 5 2 1 2 4
+CNT-002,"Stratego(2,4)_como_jugador_1",46,46,1,1,victoria,11,0.119749,0.141573,6 0 5 3 5 0 4 4 3 4 2
+CNT-002,"Stratego(2,4)_como_jugador_1",47,47,1,1,victoria,13,0.126659,0.158449,6 2 5 0 1 3 5 4 5 3 4 4 2
+CNT-002,"Stratego(2,4)_como_jugador_1",48,48,1,1,victoria,5,0.111376,0.128801,6 4 5 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",49,49,1,1,victoria,11,0.142058,0.173386,6 0 5 2 1 3 5 0 5 2 5
+CNT-002,"Stratego(2,4)_como_jugador_1",50,50,1,1,victoria,13,0.13707,0.164115,6 3 6 6 5 2 4 2 4 5 4 1 4
+CNT-002,"Stratego(2,4)_como_jugador_1",51,51,1,1,victoria,9,0.120276,0.134275,6 1 5 6 4 4 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",52,52,1,1,victoria,13,0.140915,0.173411,6 2 5 0 1 5 3 4 6 3 4 6 4
+CNT-002,"Stratego(2,4)_como_jugador_1",53,53,1,1,victoria,5,0.129122,0.149007,6 4 5 6 3
+CNT-002,"Stratego(2,4)_como_jugador_1",54,54,1,1,victoria,13,0.159221,0.185785,6 1 5 3 2 4 6 2 2 3 6 3 6
+CNT-002,"Stratego(2,4)_como_jugador_1",55,55,1,1,victoria,9,0.145298,0.196165,6 0 5 1 4 1 5 5 3
+CNT-002,"Stratego(2,4)_como_jugador_1",56,56,1,1,victoria,5,0.1363,0.180897,6 6 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",57,57,1,1,victoria,7,0.126743,0.14893,6 0 5 2 1 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",58,58,1,1,victoria,5,0.118622,0.136232,6 4 5 1 3
+CNT-002,"Stratego(2,4)_como_jugador_1",59,59,1,1,victoria,9,0.116869,0.143239,6 1 5 0 4 5 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",60,60,1,1,victoria,7,0.122073,0.144869,6 2 5 2 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",61,61,1,1,victoria,13,0.155881,0.263063,6 3 6 1 2 4 5 1 4 6 5 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",62,62,1,1,victoria,5,0.125868,0.140957,6 4 5 1 3
+CNT-002,"Stratego(2,4)_como_jugador_1",63,63,1,1,victoria,7,0.124486,0.149897,6 3 6 3 6 2 6
+CNT-002,"Stratego(2,4)_como_jugador_1",64,64,1,1,victoria,11,0.114663,0.143867,6 3 6 0 6 5 4 4 3 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",65,65,1,1,victoria,7,0.130607,0.17691,6 3 6 2 6 2 6
+CNT-002,"Stratego(2,4)_como_jugador_1",66,66,1,1,victoria,11,0.137235,0.168493,6 0 5 2 1 3 5 1 5 6 5
+CNT-002,"Stratego(2,4)_como_jugador_1",67,67,1,1,victoria,9,0.124756,0.135143,6 0 5 0 4 6 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",68,68,1,1,victoria,5,0.113871,0.120099,6 5 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",69,69,1,1,victoria,9,0.11239,0.122374,6 5 4 0 5 0 6 6 3
+CNT-002,"Stratego(2,4)_como_jugador_1",70,70,1,1,victoria,9,0.130122,0.157331,6 0 5 2 1 5 3 3 4
+CNT-002,"Stratego(2,4)_como_jugador_1",71,71,1,1,victoria,5,0.11233,0.124884,6 2 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",72,72,1,1,victoria,13,0.116081,0.139268,6 0 5 6 4 4 5 5 4 1 6 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",73,73,1,1,victoria,7,0.123486,0.13764,6 2 5 0 1 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",74,74,1,1,victoria,5,0.109711,0.121492,6 6 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",75,75,1,1,victoria,7,0.121567,0.136538,6 3 6 4 6 3 6
+CNT-002,"Stratego(2,4)_como_jugador_1",76,76,1,1,victoria,21,0.159858,0.220802,6 2 5 3 4 3 3 1 0 2 5 0 1 3 6 6 6 1 2 2 0
+CNT-002,"Stratego(2,4)_como_jugador_1",77,77,1,1,victoria,9,0.132021,0.16328,6 6 5 2 5 2 5 1 5
+CNT-002,"Stratego(2,4)_como_jugador_1",78,78,1,1,victoria,9,0.119255,0.133898,6 6 5 1 4 0 4 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",79,79,1,1,victoria,7,0.116398,0.128884,6 1 5 3 2 2 4
+CNT-002,"Stratego(2,4)_como_jugador_1",80,80,1,1,victoria,15,0.145765,0.171801,6 2 5 3 4 4 4 5 6 6 2 3 4 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",81,81,1,1,victoria,5,0.109878,0.120708,6 4 5 6 3
+CNT-002,"Stratego(2,4)_como_jugador_1",82,82,1,1,victoria,7,0.118232,0.133324,6 1 5 6 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",83,83,1,1,victoria,9,0.128488,0.147339,6 3 6 6 5 6 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",84,84,1,1,victoria,5,0.111876,0.117934,6 5 4 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",85,85,1,1,victoria,11,0.118838,0.130693,6 1 5 5 4 4 4 6 6 0 3
+CNT-002,"Stratego(2,4)_como_jugador_1",86,86,1,1,victoria,9,0.12069,0.133589,6 6 5 6 4 0 4 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",87,87,1,1,victoria,9,0.121548,0.131999,6 1 5 5 4 1 4 6 3
+CNT-002,"Stratego(2,4)_como_jugador_1",88,88,1,1,victoria,9,0.129912,0.174063,6 3 6 1 2 2 4 1 0
+CNT-002,"Stratego(2,4)_como_jugador_1",89,89,1,1,victoria,11,0.12047,0.135919,6 0 5 6 4 4 5 5 4 2 3
+CNT-002,"Stratego(2,4)_como_jugador_1",90,90,1,1,victoria,9,0.113033,0.128106,6 1 5 5 4 0 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_1",91,91,1,1,victoria,5,0.108766,0.119894,6 0 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",92,92,1,1,victoria,7,0.121271,0.138123,6 3 6 4 6 4 6
+CNT-002,"Stratego(2,4)_como_jugador_1",93,93,1,1,victoria,7,0.125333,0.141182,6 6 5 3 4 4 2
+CNT-002,"Stratego(2,4)_como_jugador_1",94,94,1,1,victoria,5,0.111838,0.128036,6 4 5 1 3
+CNT-002,"Stratego(2,4)_como_jugador_1",95,95,1,1,victoria,5,0.113427,0.12551,6 6 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",96,96,1,1,victoria,17,0.154018,0.196014,6 2 5 2 5 5 4 3 2 1 0 0 1 6 3 2 4
+CNT-002,"Stratego(2,4)_como_jugador_1",97,97,1,1,victoria,7,0.11763,0.129816,6 1 5 3 2 6 4
+CNT-002,"Stratego(2,4)_como_jugador_1",98,98,1,1,victoria,5,0.108215,0.11932,6 2 5 4 3
+CNT-002,"Stratego(2,4)_como_jugador_1",99,99,1,1,victoria,7,0.121799,0.136775,6 3 6 3 6 1 6
+CNT-002,"Stratego(1,4)_como_jugador_2",0,0,2,2,victoria,18,0.135451,0.185231,6 6 3 3 6 3 3 6 0 6 2 3 4 5 3 1 4 5
+CNT-002,"Stratego(1,4)_como_jugador_2",1,1,2,2,victoria,12,0.116029,0.14169,1 6 4 6 6 6 6 6 0 5 2 3
+CNT-002,"Stratego(1,4)_como_jugador_2",2,2,2,2,victoria,14,0.166698,0.20563,6 6 6 4 0 6 0 0 0 4 2 3 6 1
+CNT-002,"Stratego(1,4)_como_jugador_2",3,3,2,2,victoria,12,0.134575,0.155431,1 6 4 6 4 4 1 0 2 5 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",4,4,2,1,derrota,9,0.122618,0.13267,1 6 2 5 0 5 5 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",5,5,2,2,victoria,8,0.127792,0.149102,4 6 2 3 5 1 2 0
+CNT-002,"Stratego(1,4)_como_jugador_2",6,6,2,2,victoria,10,0.12812,0.136319,6 6 4 5 6 3 0 3 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",7,7,2,1,derrota,9,0.114112,0.12071,2 6 1 5 3 5 5 4 0
+CNT-002,"Stratego(1,4)_como_jugador_2",8,8,2,2,victoria,20,0.132484,0.191341,1 6 2 5 3 5 1 0 1 1 5 3 0 4 0 4 1 3 1 2
+CNT-002,"Stratego(1,4)_como_jugador_2",9,9,2,2,victoria,8,0.113695,0.135533,3 6 4 6 2 6 2 6
+CNT-002,"Stratego(1,4)_como_jugador_2",10,10,2,2,victoria,10,0.135428,0.155926,4 6 0 5 3 6 3 6 4 6
+CNT-002,"Stratego(1,4)_como_jugador_2",11,11,2,2,victoria,18,0.14683,0.176665,3 6 6 3 4 6 6 4 6 4 3 3 3 4 4 5 6 5
+CNT-002,"Stratego(1,4)_como_jugador_2",12,12,2,2,victoria,10,0.125502,0.145842,3 6 2 6 5 4 4 5 5 3
+CNT-002,"Stratego(1,4)_como_jugador_2",13,13,2,2,victoria,12,0.122343,0.143897,2 6 2 6 5 4 5 4 6 4 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",14,14,2,2,victoria,6,0.121281,0.133724,0 6 4 5 5 3
+CNT-002,"Stratego(1,4)_como_jugador_2",15,15,2,2,victoria,6,0.11424,0.123752,1 6 0 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_2",16,16,2,2,victoria,8,0.12614,0.143797,2 6 3 6 3 6 2 6
+CNT-002,"Stratego(1,4)_como_jugador_2",17,17,2,2,victoria,12,0.130584,0.14896,4 6 3 6 6 5 2 5 2 5 2 5
+CNT-002,"Stratego(1,4)_como_jugador_2",18,18,2,2,victoria,6,0.118932,0.123049,1 6 0 3 5 4
+CNT-002,"Stratego(1,4)_como_jugador_2",19,19,2,2,victoria,8,0.123368,0.134847,5 6 0 4 6 4 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",20,20,2,2,victoria,12,0.110266,0.136047,5 6 5 4 6 4 6 4 1 6 2 4
+CNT-002,"Stratego(1,4)_como_jugador_2",21,21,2,2,victoria,6,0.117021,0.12875,1 6 3 2 5 4
+CNT-002,"Stratego(1,4)_como_jugador_2",22,22,2,2,victoria,8,0.124284,0.136253,1 6 1 6 0 6 4 6
+CNT-002,"Stratego(1,4)_como_jugador_2",23,23,2,2,victoria,14,0.150702,0.197403,6 6 2 2 6 2 0 2 0 1 4 5 2 3
+CNT-002,"Stratego(1,4)_como_jugador_2",24,24,2,2,victoria,6,0.116242,0.124915,5 6 3 4 6 2
+CNT-002,"Stratego(1,4)_como_jugador_2",25,25,2,2,victoria,14,0.137651,0.200314,3 6 6 3 6 6 6 6 0 5 1 2 2 4
+CNT-002,"Stratego(1,4)_como_jugador_2",26,26,2,2,victoria,10,0.124988,0.139338,5 6 1 4 5 6 1 4 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",27,27,2,2,victoria,6,0.115929,0.125877,5 6 3 4 5 2
+CNT-002,"Stratego(1,4)_como_jugador_2",28,28,2,2,victoria,8,0.115368,0.126779,0 6 5 4 1 5 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",29,29,2,2,victoria,6,0.11903,0.13522,4 6 0 5 2 3
+CNT-002,"Stratego(1,4)_como_jugador_2",30,30,2,2,victoria,8,0.171079,0.204005,4 6 6 4 2 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_2",31,31,2,2,victoria,10,0.1275,0.147024,0 6 3 5 0 5 6 4 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",32,32,2,2,victoria,12,0.134106,0.163338,0 6 1 3 1 6 2 4 5 6 1 6
+CNT-002,"Stratego(1,4)_como_jugador_2",33,33,2,2,victoria,10,0.131543,0.159361,4 6 1 6 5 0 1 3 6 2
+CNT-002,"Stratego(1,4)_como_jugador_2",34,34,2,2,victoria,6,0.117332,0.127396,4 6 2 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_2",35,35,2,2,victoria,6,0.11714,0.128175,4 6 2 3 6 5
+CNT-002,"Stratego(1,4)_como_jugador_2",36,36,2,2,victoria,10,0.129016,0.14349,2 6 0 1 0 3 6 3 6 4
+CNT-002,"Stratego(1,4)_como_jugador_2",37,37,2,2,victoria,10,0.136953,0.161096,5 6 4 2 0 6 4 6 5 6
+CNT-002,"Stratego(1,4)_como_jugador_2",38,38,2,2,victoria,6,0.121182,0.134304,5 6 3 4 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",39,39,2,1,derrota,7,0.114027,0.125342,1 6 2 5 3 5 0
+CNT-002,"Stratego(1,4)_como_jugador_2",40,40,2,2,victoria,8,0.12836,0.14059,3 6 4 6 4 6 0 6
+CNT-002,"Stratego(1,4)_como_jugador_2",41,41,2,1,derrota,11,0.123747,0.155672,3 6 2 6 1 3 1 0 3 3 4
+CNT-002,"Stratego(1,4)_como_jugador_2",42,42,2,2,victoria,12,0.119596,0.132346,5 6 0 4 0 5 5 6 2 4 1 3
+CNT-002,"Stratego(1,4)_como_jugador_2",43,43,2,2,victoria,8,0.129203,0.147874,0 6 2 1 5 4 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",44,44,2,2,victoria,8,0.121391,0.13977,3 6 4 6 4 6 5 6
+CNT-002,"Stratego(1,4)_como_jugador_2",45,45,2,2,victoria,8,0.127635,0.148179,2 6 3 6 3 6 2 6
+CNT-002,"Stratego(1,4)_como_jugador_2",46,46,2,1,derrota,13,0.153901,0.201534,0 6 3 5 0 5 4 0 4 3 6 2 1
+CNT-002,"Stratego(1,4)_como_jugador_2",47,47,2,2,victoria,14,0.148436,0.184401,2 6 0 1 3 5 4 6 3 3 4 6 2 6
+CNT-002,"Stratego(1,4)_como_jugador_2",48,48,2,2,victoria,6,0.119861,0.129149,4 6 2 3 1 5
+CNT-002,"Stratego(1,4)_como_jugador_2",49,49,2,2,victoria,16,0.158642,0.198029,0 6 2 1 3 5 0 5 2 2 6 1 4 3 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",50,50,2,2,victoria,16,0.162952,0.216347,3 6 6 3 2 6 2 0 5 1 1 1 5 3 3 0
+CNT-002,"Stratego(1,4)_como_jugador_2",51,51,2,2,victoria,8,0.129211,0.148857,1 6 6 6 4 5 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",52,52,2,2,victoria,8,0.131721,0.145609,2 6 0 1 5 4 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",53,53,2,2,victoria,14,0.155286,0.203062,4 6 6 4 1 4 3 2 4 0 5 1 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",54,54,2,2,victoria,12,0.142993,0.173931,1 6 3 2 4 6 2 4 3 6 3 6
+CNT-002,"Stratego(1,4)_como_jugador_2",55,55,2,2,victoria,8,0.149366,0.171082,0 6 1 3 1 6 5 4
+CNT-002,"Stratego(1,4)_como_jugador_2",56,56,2,2,victoria,8,0.134506,0.168299,6 6 4 5 0 3 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",57,57,2,2,victoria,8,0.145935,0.204603,0 6 2 1 4 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_2",58,58,2,2,victoria,8,0.123592,0.135859,4 6 1 6 1 5 5 3
+CNT-002,"Stratego(1,4)_como_jugador_2",59,59,2,2,victoria,6,0.120114,0.130727,1 6 0 3 5 4
+CNT-002,"Stratego(1,4)_como_jugador_2",60,60,2,2,victoria,8,0.128453,0.138901,2 6 2 6 4 3 1 5
+CNT-002,"Stratego(1,4)_como_jugador_2",61,61,2,2,victoria,14,0.157568,0.194393,3 6 1 2 4 6 1 4 6 4 2 4 2 4
+CNT-002,"Stratego(1,4)_como_jugador_2",62,62,2,2,victoria,8,0.124367,0.137778,4 6 1 6 0 5 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",63,63,2,2,victoria,8,0.125752,0.141128,3 6 3 6 2 6 2 6
+CNT-002,"Stratego(1,4)_como_jugador_2",64,64,2,2,victoria,10,0.130986,0.146158,3 6 0 5 5 6 4 3 3 4
+CNT-002,"Stratego(1,4)_como_jugador_2",65,65,2,2,victoria,8,0.11762,0.139063,3 6 2 6 2 6 4 6
+CNT-002,"Stratego(1,4)_como_jugador_2",66,66,2,2,victoria,24,0.16173,0.217058,0 6 2 1 3 5 1 3 6 3 3 6 2 2 2 2 6 3 6 0 4 4 0 4
+CNT-002,"Stratego(1,4)_como_jugador_2",67,67,2,2,victoria,8,0.128878,0.150952,0 6 0 4 6 5 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",68,68,2,2,victoria,6,0.120893,0.128867,5 6 3 4 5 2
+CNT-002,"Stratego(1,4)_como_jugador_2",69,69,2,2,victoria,10,0.1175,0.129573,5 6 0 4 0 5 6 4 1 3
+CNT-002,"Stratego(1,4)_como_jugador_2",70,70,2,2,victoria,12,0.140582,0.163024,0 6 2 1 5 4 3 5 3 4 1 2
+CNT-002,"Stratego(1,4)_como_jugador_2",71,71,2,2,victoria,6,0.119226,0.127716,2 6 4 3 4 5
+CNT-002,"Stratego(1,4)_como_jugador_2",72,72,2,2,victoria,6,0.120992,0.135207,0 6 6 5 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",73,73,2,2,victoria,8,0.12963,0.148237,2 6 0 1 4 3 3 5
+CNT-002,"Stratego(1,4)_como_jugador_2",74,74,2,2,victoria,10,0.121154,0.14084,6 6 4 5 4 3 6 3 0 5
+CNT-002,"Stratego(1,4)_como_jugador_2",75,75,2,2,victoria,8,0.130279,0.147819,3 6 4 6 3 6 3 6
+CNT-002,"Stratego(1,4)_como_jugador_2",76,76,2,2,victoria,8,0.119576,0.142699,2 6 3 6 3 6 1 6
+CNT-002,"Stratego(1,4)_como_jugador_2",77,77,2,2,victoria,12,0.152791,0.184192,6 6 2 2 2 6 1 4 1 6 1 6
+CNT-002,"Stratego(1,4)_como_jugador_2",78,78,2,2,victoria,8,0.122081,0.136838,6 6 1 6 0 6 2 6
+CNT-002,"Stratego(1,4)_como_jugador_2",79,79,2,2,victoria,8,0.118638,0.140061,1 6 3 2 2 4 4 0
+CNT-002,"Stratego(1,4)_como_jugador_2",80,80,2,1,derrota,7,0.114385,0.126094,2 6 3 6 4 6 5
+CNT-002,"Stratego(1,4)_como_jugador_2",81,81,2,2,victoria,16,0.143512,0.167586,4 6 6 4 3 6 2 5 4 4 4 3 3 5 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",82,82,2,2,victoria,14,0.15602,0.20051,1 6 6 6 3 2 4 4 2 4 6 4 6 4
+CNT-002,"Stratego(1,4)_como_jugador_2",83,83,2,2,victoria,14,0.160161,0.194548,3 6 6 3 6 6 3 3 0 5 1 2 3 4
+CNT-002,"Stratego(1,4)_como_jugador_2",84,84,2,2,victoria,6,0.118784,0.121886,5 6 2 4 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",85,85,2,2,victoria,8,0.117741,0.125166,1 6 5 4 4 4 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",86,86,2,2,victoria,12,0.166769,0.265159,6 6 6 4 0 6 4 5 6 3 2 1
+CNT-002,"Stratego(1,4)_como_jugador_2",87,87,2,2,victoria,8,0.114375,0.122888,1 6 5 4 1 5 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",88,88,2,2,victoria,10,0.121133,0.14197,3 6 1 2 2 4 1 1 5 0
+CNT-002,"Stratego(1,4)_como_jugador_2",89,89,2,2,victoria,6,0.126639,0.134978,0 6 6 5 4 3
+CNT-002,"Stratego(1,4)_como_jugador_2",90,90,2,2,victoria,8,0.113427,0.126499,1 6 5 4 0 5 3 2
+CNT-002,"Stratego(1,4)_como_jugador_2",91,91,2,2,victoria,6,0.130401,0.14897,0 6 4 5 1 3
+CNT-002,"Stratego(1,4)_como_jugador_2",92,92,2,2,victoria,8,0.127422,0.136812,3 6 4 6 4 6 4 6
+CNT-002,"Stratego(1,4)_como_jugador_2",93,93,2,2,victoria,8,0.129804,0.143489,6 6 3 3 4 5 5 4
+CNT-002,"Stratego(1,4)_como_jugador_2",94,94,2,2,victoria,8,0.121035,0.131287,4 6 1 6 0 5 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",95,95,2,2,victoria,12,0.117447,0.144984,6 6 4 5 4 3 5 3 4 6 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",96,96,2,2,victoria,14,0.144878,0.170212,2 6 2 6 5 4 3 0 1 4 0 5 6 3
+CNT-002,"Stratego(1,4)_como_jugador_2",97,97,2,2,victoria,8,0.134251,0.179918,1 6 3 2 6 4 2 0
+CNT-002,"Stratego(1,4)_como_jugador_2",98,98,2,2,victoria,6,0.121181,0.128003,2 6 4 3 6 5
+CNT-002,"Stratego(1,4)_como_jugador_2",99,99,2,2,victoria,16,0.155281,0.20942,3 6 3 6 1 2 4 3 1 4 1 1 1 6 1 6
+CNT-002,"Stratego(2,4)_como_jugador_2",0,0,2,2,victoria,6,0.112307,0.124036,6 5 3 4 6 2
+CNT-002,"Stratego(2,4)_como_jugador_2",1,1,2,2,victoria,6,0.117842,0.133557,1 0 4 3 6 2
+CNT-002,"Stratego(2,4)_como_jugador_2",2,2,2,2,victoria,12,0.138355,0.169684,6 5 6 4 0 6 0 2 0 0 2 3
+CNT-002,"Stratego(2,4)_como_jugador_2",3,3,2,2,victoria,6,0.113303,0.123966,1 0 4 3 4 2
+CNT-002,"Stratego(2,4)_como_jugador_2",4,4,2,2,victoria,8,0.12773,0.154399,1 0 2 3 0 4 5 6
+CNT-002,"Stratego(2,4)_como_jugador_2",5,5,2,2,victoria,10,0.144452,0.170294,4 6 2 3 5 5 2 1 6 0
+CNT-002,"Stratego(2,4)_como_jugador_2",6,6,2,1,derrota,9,0.108212,0.115396,6 5 4 1 6 5 0 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",7,7,2,2,victoria,16,0.141194,0.182005,2 6 1 3 3 4 5 3 0 4 0 2 6 4 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",8,8,2,2,victoria,16,0.143268,0.167115,1 0 2 3 3 4 1 0 1 1 5 0 0 5 0 6
+CNT-002,"Stratego(2,4)_como_jugador_2",9,9,2,2,victoria,14,0.137477,0.176946,3 0 4 5 2 6 2 1 1 2 1 0 6 3
+CNT-002,"Stratego(2,4)_como_jugador_2",10,10,2,2,victoria,8,0.134752,0.159411,4 6 0 3 3 2 3 5
+CNT-002,"Stratego(2,4)_como_jugador_2",11,11,2,1,derrota,15,0.148422,0.191904,3 0 6 3 4 5 6 6 6 3 3 5 3 5 4
+CNT-002,"Stratego(2,4)_como_jugador_2",12,12,2,1,derrota,5,0.121348,0.126405,3 0 2 4 5
+CNT-002,"Stratego(2,4)_como_jugador_2",13,13,2,2,victoria,8,0.13321,0.151346,2 6 2 2 5 4 5 3
+CNT-002,"Stratego(2,4)_como_jugador_2",14,14,2,2,victoria,16,0.157181,0.185216,0 3 4 2 5 5 6 6 5 0 4 4 1 6 2 3
+CNT-002,"Stratego(2,4)_como_jugador_2",15,15,2,2,victoria,6,0.131511,0.143234,1 0 0 2 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",16,16,2,1,derrota,15,0.122692,0.145252,2 6 3 4 3 5 2 5 3 6 1 3 3 1 0
+CNT-002,"Stratego(2,4)_como_jugador_2",17,17,2,2,victoria,24,0.148867,0.23513,4 6 3 5 6 2 2 1 2 5 2 4 1 5 6 4 5 2 5 4 4 5 6 6
+CNT-002,"Stratego(2,4)_como_jugador_2",18,18,2,2,victoria,8,0.145808,0.173143,1 0 0 2 5 0 3 4
+CNT-002,"Stratego(2,4)_como_jugador_2",19,19,2,2,victoria,16,0.134858,0.156305,5 6 0 4 6 6 4 4 0 5 4 6 1 1 3 2
+CNT-002,"Stratego(2,4)_como_jugador_2",20,20,2,2,victoria,10,0.130839,0.161649,5 6 5 4 6 6 6 5 1 5
+CNT-002,"Stratego(2,4)_como_jugador_2",21,21,2,2,victoria,6,0.144504,0.171747,1 0 3 2 5 4
+CNT-002,"Stratego(2,4)_como_jugador_2",22,22,2,2,victoria,8,0.129257,0.158029,1 0 1 2 0 4 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",23,23,2,2,victoria,10,0.137621,0.161009,6 5 2 4 6 6 0 1 0 3
+CNT-002,"Stratego(2,4)_como_jugador_2",24,24,2,2,victoria,6,0.119571,0.124212,5 6 3 4 6 2
+CNT-002,"Stratego(2,4)_como_jugador_2",25,25,2,2,victoria,12,0.175627,0.198875,3 0 6 3 6 6 6 4 0 5 1 2
+CNT-002,"Stratego(2,4)_como_jugador_2",26,26,2,2,victoria,18,0.154105,0.214795,5 6 1 4 5 5 1 2 3 0 4 2 4 3 0 3 1 4
+CNT-002,"Stratego(2,4)_como_jugador_2",27,27,2,2,victoria,6,0.130561,0.144801,5 6 3 4 5 2
+CNT-002,"Stratego(2,4)_como_jugador_2",28,28,2,2,victoria,8,0.163801,0.179522,0 3 5 5 1 4 4 6
+CNT-002,"Stratego(2,4)_como_jugador_2",29,29,2,1,derrota,19,0.121183,0.194665,4 6 0 3 2 1 4 5 6 3 4 4 2 5 0 6 4 1 2
+CNT-002,"Stratego(2,4)_como_jugador_2",30,30,2,2,victoria,8,0.139417,0.160212,4 6 6 6 2 3 4 5
+CNT-002,"Stratego(2,4)_como_jugador_2",31,31,2,2,victoria,14,0.156507,0.177143,0 3 3 3 0 6 6 3 3 6 1 0 5 4
+CNT-002,"Stratego(2,4)_como_jugador_2",32,32,2,2,victoria,10,0.13693,0.207208,0 3 1 3 1 3 2 4 5 3
+CNT-002,"Stratego(2,4)_como_jugador_2",33,33,2,2,victoria,8,0.137083,0.1618,4 6 1 3 5 2 1 0
+CNT-002,"Stratego(2,4)_como_jugador_2",34,34,2,2,victoria,6,0.130003,0.153645,4 6 2 3 4 5
+CNT-002,"Stratego(2,4)_como_jugador_2",35,35,2,2,victoria,6,0.179139,0.249068,4 6 2 3 6 5
+CNT-002,"Stratego(2,4)_como_jugador_2",36,36,2,2,victoria,12,0.152864,0.215077,2 6 0 1 0 3 6 3 6 3 2 3
+CNT-002,"Stratego(2,4)_como_jugador_2",37,37,2,2,victoria,22,0.137047,0.204651,5 6 4 3 0 2 4 4 5 6 6 2 5 5 6 4 5 4 4 5 0 3
+CNT-002,"Stratego(2,4)_como_jugador_2",38,38,2,2,victoria,6,0.123834,0.131879,5 6 3 4 3 2
+CNT-002,"Stratego(2,4)_como_jugador_2",39,39,2,2,victoria,20,0.129844,0.154193,1 0 2 3 3 4 0 1 1 1 1 2 3 0 5 3 4 5 0 2
+CNT-002,"Stratego(2,4)_como_jugador_2",40,40,2,1,derrota,11,0.125466,0.154015,3 0 4 5 4 6 0 4 1 5 2
+CNT-002,"Stratego(2,4)_como_jugador_2",41,41,2,1,derrota,21,0.125665,0.165282,3 0 2 4 1 5 1 1 3 0 4 2 5 3 2 5 4 0 2 5 3
+CNT-002,"Stratego(2,4)_como_jugador_2",42,42,2,2,victoria,10,0.143367,0.163961,5 6 0 4 0 0 5 6 2 3
+CNT-002,"Stratego(2,4)_como_jugador_2",43,43,2,2,victoria,8,0.124866,0.141501,0 3 2 4 5 0 6 1
+CNT-002,"Stratego(2,4)_como_jugador_2",44,44,2,1,derrota,19,0.1357,0.180044,3 0 4 5 4 6 5 4 6 3 0 3 1 3 3 4 1 5 2
+CNT-002,"Stratego(2,4)_como_jugador_2",45,45,2,2,victoria,14,0.120145,0.139435,2 6 3 4 3 5 2 5 0 3 2 2 2 4
+CNT-002,"Stratego(2,4)_como_jugador_2",46,46,2,2,victoria,10,0.163206,0.197909,0 3 3 3 0 6 4 2 4 5
+CNT-002,"Stratego(2,4)_como_jugador_2",47,47,2,2,victoria,14,0.161731,0.202141,2 6 0 1 3 3 4 5 3 4 4 5 2 3
+CNT-002,"Stratego(2,4)_como_jugador_2",48,48,2,2,victoria,6,0.145564,0.181444,4 6 2 3 1 5
+CNT-002,"Stratego(2,4)_como_jugador_2",49,49,2,2,victoria,6,0.147025,0.163219,0 3 2 4 3 1
+CNT-002,"Stratego(2,4)_como_jugador_2",50,50,2,2,victoria,20,0.148718,0.217302,3 0 6 3 2 4 2 5 5 4 1 4 5 2 3 1 6 1 2 3
+CNT-002,"Stratego(2,4)_como_jugador_2",51,51,2,2,victoria,6,0.154812,0.176856,1 0 6 2 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",52,52,2,2,victoria,8,0.126915,0.137165,2 6 0 1 5 4 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",53,53,2,2,victoria,16,0.142186,0.179735,4 6 6 6 1 3 3 2 4 3 5 5 3 4 5 5
+CNT-002,"Stratego(2,4)_como_jugador_2",54,54,2,1,derrota,13,0.111649,0.13653,1 0 3 2 4 5 2 2 3 1 3 0 3
+CNT-002,"Stratego(2,4)_como_jugador_2",55,55,2,2,victoria,8,0.124811,0.137121,0 3 1 3 1 3 5 3
+CNT-002,"Stratego(2,4)_como_jugador_2",56,56,2,1,derrota,7,0.099678,0.106798,6 5 4 1 0 5 3
+CNT-002,"Stratego(2,4)_como_jugador_2",57,57,2,2,victoria,6,0.160765,0.170541,0 3 2 4 4 1
+CNT-002,"Stratego(2,4)_como_jugador_2",58,58,2,2,victoria,8,0.136753,0.19962,4 6 1 3 1 2 5 0
+CNT-002,"Stratego(2,4)_como_jugador_2",59,59,2,2,victoria,8,0.134696,0.15102,1 0 0 2 5 0 3 4
+CNT-002,"Stratego(2,4)_como_jugador_2",60,60,2,2,victoria,8,0.136939,0.173116,2 6 2 2 4 3 1 5
+CNT-002,"Stratego(2,4)_como_jugador_2",61,61,2,2,victoria,20,0.154981,0.215135,3 0 1 2 4 5 1 6 6 3 2 4 2 5 2 5 6 3 5 4
+CNT-002,"Stratego(2,4)_como_jugador_2",62,62,2,2,victoria,8,0.132425,0.19535,4 6 1 3 0 2 6 5
+CNT-002,"Stratego(2,4)_como_jugador_2",63,63,2,2,victoria,20,0.152681,0.218915,3 0 3 6 2 4 2 5 3 5 5 6 0 3 3 2 5 5 0 4
+CNT-002,"Stratego(2,4)_como_jugador_2",64,64,2,2,victoria,20,0.106897,0.1466,3 0 0 4 5 5 4 6 3 0 4 6 5 6 0 4 1 2 2 6
+CNT-002,"Stratego(2,4)_como_jugador_2",65,65,2,1,derrota,17,0.127975,0.169541,3 0 2 4 2 5 4 5 6 2 1 6 3 4 3 6 4
+CNT-002,"Stratego(2,4)_como_jugador_2",66,66,2,2,victoria,6,0.17695,0.178604,0 3 2 4 3 1
+CNT-002,"Stratego(2,4)_como_jugador_2",67,67,2,2,victoria,20,0.121978,0.17759,0 3 0 3 6 3 3 6 3 0 3 6 2 4 5 2 4 4 4 5
+CNT-002,"Stratego(2,4)_como_jugador_2",68,68,2,2,victoria,6,0.129519,0.138223,5 6 3 4 5 2
+CNT-002,"Stratego(2,4)_como_jugador_2",69,69,2,2,victoria,20,0.144158,0.16811,5 6 0 4 0 0 6 6 1 5 0 1 4 4 2 2 2 5 6 3
+CNT-002,"Stratego(2,4)_como_jugador_2",70,70,2,2,victoria,8,0.113634,0.122486,0 3 2 4 5 0 3 6
+CNT-002,"Stratego(2,4)_como_jugador_2",71,71,2,2,victoria,6,0.128433,0.131471,2 6 4 3 4 5
+CNT-002,"Stratego(2,4)_como_jugador_2",72,72,2,1,derrota,17,0.150759,0.171916,0 3 6 6 4 2 5 6 1 3 2 4 5 2 4 3 4
+CNT-002,"Stratego(2,4)_como_jugador_2",73,73,2,2,victoria,12,0.143538,0.165684,2 6 0 1 4 5 3 5 4 6 1 3
+CNT-002,"Stratego(2,4)_como_jugador_2",74,74,2,1,derrota,23,0.137426,0.205528,6 5 4 1 4 6 6 4 0 1 2 3 0 2 6 0 2 2 1 3 6 6 1
+CNT-002,"Stratego(2,4)_como_jugador_2",75,75,2,1,derrota,19,0.157594,0.259017,3 0 4 5 3 6 3 3 0 0 5 6 6 2 4 2 5 1 6
+CNT-002,"Stratego(2,4)_como_jugador_2",76,76,2,2,victoria,18,0.137393,0.26977,2 6 3 4 3 5 1 0 2 5 0 2 3 4 6 5 1 4
+CNT-002,"Stratego(2,4)_como_jugador_2",77,77,2,2,victoria,10,0.128781,0.147186,6 5 2 4 2 1 1 0 1 3
+CNT-002,"Stratego(2,4)_como_jugador_2",78,78,2,2,victoria,8,0.126854,0.147265,6 5 1 4 0 2 2 3
+CNT-002,"Stratego(2,4)_como_jugador_2",79,79,2,2,victoria,6,0.143208,0.154345,1 0 3 2 2 4
+CNT-002,"Stratego(2,4)_como_jugador_2",80,80,2,2,victoria,14,0.12359,0.156088,2 6 3 4 4 5 5 4 6 6 3 5 2 5
+CNT-002,"Stratego(2,4)_como_jugador_2",81,81,2,2,victoria,16,0.134035,0.180738,4 6 6 6 3 5 2 3 4 4 4 2 3 2 3 5
+CNT-002,"Stratego(2,4)_como_jugador_2",82,82,2,2,victoria,6,0.123658,0.129664,1 0 6 2 3 4
+CNT-002,"Stratego(2,4)_como_jugador_2",83,83,2,2,victoria,12,0.145939,0.177071,3 0 6 3 6 6 3 4 0 5 1 2
+CNT-002,"Stratego(2,4)_como_jugador_2",84,84,2,2,victoria,6,0.119383,0.12676,5 6 2 4 6 3
+CNT-002,"Stratego(2,4)_como_jugador_2",85,85,2,2,victoria,6,0.11823,0.125969,1 0 5 2 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",86,86,2,2,victoria,14,0.143833,0.167992,6 5 6 4 0 6 4 5 6 4 2 3 5 1
+CNT-002,"Stratego(2,4)_como_jugador_2",87,87,2,2,victoria,12,0.122762,0.140847,1 0 5 2 1 5 6 1 6 1 4 3
+CNT-002,"Stratego(2,4)_como_jugador_2",88,88,2,2,victoria,6,0.119039,0.125655,3 0 1 2 2 4
+CNT-002,"Stratego(2,4)_como_jugador_2",89,89,2,2,victoria,16,0.179145,0.226174,0 3 6 6 4 2 5 6 2 4 1 5 2 4 6 3
+CNT-002,"Stratego(2,4)_como_jugador_2",90,90,2,2,victoria,8,0.130873,0.171937,1 0 5 2 0 0 3 4
+CNT-002,"Stratego(2,4)_como_jugador_2",91,91,2,2,victoria,6,0.116753,0.128824,0 3 4 2 1 5
+CNT-002,"Stratego(2,4)_como_jugador_2",92,92,2,2,victoria,18,0.113928,0.172881,3 0 4 5 4 6 4 4 4 3 6 2 4 2 2 3 6 1
+CNT-002,"Stratego(2,4)_como_jugador_2",93,93,2,2,victoria,6,0.118603,0.125689,6 5 3 4 4 2
+CNT-002,"Stratego(2,4)_como_jugador_2",94,94,2,2,victoria,8,0.11919,0.146354,4 6 1 3 0 2 6 5
+CNT-002,"Stratego(2,4)_como_jugador_2",95,95,2,2,victoria,14,0.117491,0.159976,6 5 4 1 4 6 5 3 4 2 6 4 6 0
+CNT-002,"Stratego(2,4)_como_jugador_2",96,96,2,2,victoria,24,0.140201,0.19148,2 6 2 2 5 4 3 2 1 0 0 3 6 1 2 0 6 6 0 1 5 0 0 1
+CNT-002,"Stratego(2,4)_como_jugador_2",97,97,2,2,victoria,6,0.11568,0.120917,1 0 3 2 6 4
+CNT-002,"Stratego(2,4)_como_jugador_2",98,98,2,2,victoria,6,0.131236,0.147023,2 6 4 3 6 5
+CNT-002,"Stratego(2,4)_como_jugador_2",99,99,2,2,victoria,24,0.104539,0.167743,3 0 3 6 1 2 4 3 1 2 1 0 1 1 1 4 0 0 3 4 6 2 4 2

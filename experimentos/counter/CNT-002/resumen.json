@@ -1,0 +1,57 @@
+{
+  "duracion_total_s": 276.9,
+  "variantes": {
+    "Stratego(1,4)_como_jugador_1": {
+      "partidas": 100,
+      "victorias": 86,
+      "derrotas": 14,
+      "empates": 0,
+      "tasa_victoria": 0.86,
+      "ic95_tasa_victoria": [
+        0.7786,
+        0.9147
+      ],
+      "jugadas_promedio": 9.76,
+      "tiempo_medio_por_jugada_s": 0.132919
+    },
+    "Stratego(2,4)_como_jugador_1": {
+      "partidas": 100,
+      "victorias": 100,
+      "derrotas": 0,
+      "empates": 0,
+      "tasa_victoria": 1.0,
+      "ic95_tasa_victoria": [
+        0.963,
+        1.0
+      ],
+      "jugadas_promedio": 8.66,
+      "tiempo_medio_por_jugada_s": 0.126485
+    },
+    "Stratego(1,4)_como_jugador_2": {
+      "partidas": 100,
+      "victorias": 94,
+      "derrotas": 6,
+      "empates": 0,
+      "tasa_victoria": 0.94,
+      "ic95_tasa_victoria": [
+        0.8752,
+        0.9722
+      ],
+      "jugadas_promedio": 9.76,
+      "tiempo_medio_por_jugada_s": 0.130374
+    },
+    "Stratego(2,4)_como_jugador_2": {
+      "partidas": 100,
+      "victorias": 86,
+      "derrotas": 14,
+      "empates": 0,
+      "tasa_victoria": 0.86,
+      "ic95_tasa_victoria": [
+        0.7786,
+        0.9147
+      ],
+      "jugadas_promedio": 11.58,
+      "tiempo_medio_por_jugada_s": 0.135165
+    }
+  }
+}

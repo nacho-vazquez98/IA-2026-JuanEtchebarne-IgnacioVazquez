@@ -1,0 +1,14 @@
+{
+  "id": "CNT-002",
+  "fecha": "2026-11-24T18:30:12",
+  "commit": "5fd8882-sucio",
+  "python": "3.11.8",
+  "plataforma": "Windows-10-10.0.26300-SP0",
+  "configuracion": {
+    "pregunta": "¿Stratego juega mejor cuando el número de jugador que deriva de su constructor ((argumento % 2) + 1) coincide con su turno real?",
+    "agente_evaluado": "Stratego(argumento, 4), argumento en {1, 2}, como jugador 1 o 2",
+    "rival": "AgenteAleatorio(semilla)",
+    "semillas": "0..99 por variante",
+    "apertura": "ninguna"
+  }
+}

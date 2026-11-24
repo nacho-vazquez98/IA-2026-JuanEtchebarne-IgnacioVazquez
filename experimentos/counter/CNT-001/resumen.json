@@ -1,0 +1,18 @@
+{
+  "duracion_total_s": 79.8,
+  "variantes": {
+    "aleatorio_vs_stratego_oficial": {
+      "partidas": 100,
+      "victorias": 14,
+      "derrotas": 86,
+      "empates": 0,
+      "tasa_victoria": 0.14,
+      "ic95_tasa_victoria": [
+        0.0853,
+        0.2214
+      ],
+      "jugadas_promedio": 11.58,
+      "tiempo_medio_por_jugada_s": 6e-06
+    }
+  }
+}
