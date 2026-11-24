@@ -49,3 +49,7 @@ Registro de **todas** las corridas de COUNTER, incluidas las exploratorias, fall
 - **Conclusión:** se confirma la hipótesis. Con el número que no coincide, Stratego gana menos contra el mismo rival aleatorio: 86 contra 100 como jugador 1 (intervalos disjuntos) y 86 contra 94 como jugador 2 (intervalos solapados, diferencia menos firme). El Stratego oficial es la variante "no coincidente". Igual gana el 86 % de las partidas contra un agente aleatorio. Las 86 victorias del oficial coinciden exactamente con CNT-001, que usa las mismas semillas, y eso valida la consistencia del arena.
 - **Decisión:** se evalúa contra el Stratego oficial sin modificarlo, que es la opción A elegida por el equipo. El hallazgo se reportará en el informe como nota de advertencia.
 - **Próximo paso:** consultar a los docentes si la asignación de jugador es intencional (pendiente).
+
+#### Actualización de CNT-002 (2026-11-24)
+
+Juan Etchebarne confirmó que la asignación de jugador del Stratego oficial es **intencional**. Ya no queda nada pendiente sobre este punto. Las conclusiones de CNT-002 se mantienen: el rival oficial es la configuración "no coincidente" y se lo usa sin modificaciones.
