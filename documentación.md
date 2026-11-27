@@ -117,6 +117,23 @@ y comparar las variantes en A06.
   actualizaciones llegan a la tabla. La comparación de desempeño corresponde a
   A06, usando el protocolo de entrenamiento y evaluación de A05.
 
+### 2026-11-26 — ACROBAT — Protocolo de evaluación y persistencia
+
+- **Tareas** — P05 y A05.
+- **Métrica** — La utilidad inicial se estima con el retorno observado medio
+  sin descuento porque refleja éxitos y duración con la misma escala para
+  todas las políticas. En las mismas trayectorias se calcula el retorno
+  descontado con γ de evaluación de 0,99, la tasa de éxito y los pasos medios
+  entre éxitos. Para los modelos tabulares también se registra el máximo Q
+  inicial como diagnóstico.
+- **Reproducibilidad** — Se fijaron conjuntos disjuntos de semillas para el
+  entrenamiento, la validación y la evaluación final. La tabla se guarda en
+  NPZ, con la configuración necesaria para reconstruir su grilla y sus
+  hiperparámetros. El evaluador carga el modelo en un proceso independiente y
+  no actualiza la tabla. Se usa Matplotlib para generar el gráfico en el
+  entorno Poetry de Acrobot.
+- **Protocolo** — [Protocolo experimental y comandos](experimentos/acrobot/protocolo.md).
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas
