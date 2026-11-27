@@ -133,10 +133,19 @@ y comparar las variantes en A06.
   no actualiza la tabla. Se usa Matplotlib para generar el gráfico en el
   entorno Poetry de Acrobot.
 - **Protocolo** — [Protocolo experimental y comandos](experimentos/acrobot/protocolo.md).
-- **Diseño de Dyna‑Q (A09)** — Se reutiliza la actualización tabular de
-  Q-Learning y se añade planificación con la última transición real
-  observada por par estado y acción. Los casos de terminación, truncamiento
-  y equivalencia con n = 0 se detallan en el [diseño para Acrobot](Acrobot/diseno_dyna_q.md).
+### 2026-11-27 — ACROBAT — Diseño de Dyna-Q para Acrobot
+
+- **Tarea** — A09.
+- **Decisión** — Guardar la última transición por par estado y acción
+  observado, muestrear en dos etapas y reutilizar la actualización de
+  A04. La planificación usa un generador separado de la política.
+- **Alternativa** — Guardar frecuencias por resultado. Requiere más memoria
+  y muestreo adicional. Se estudiará si la discretización produce resultados
+  distintos con frecuencia y limita el rendimiento de la planificación.
+- **Consecuencias** — Con n = 0 se obtiene Q-Learning para las mismas
+  semillas. El modelo de transición se conserva en memoria y la tabla
+  persistida se usa para evaluar la política.
+- **Evidencia** — [Diseño y verificaciones para A10](Acrobot/diseno_dyna_q.md).
 
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
