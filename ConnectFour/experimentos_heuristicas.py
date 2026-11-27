@@ -1,7 +1,9 @@
 """Experimentos sobre funciones de evaluación (C03).
 
 Uso, desde ``ConnectFour/``:
-    poetry run python experimentos_heuristicas.py CNT-003 [--partidas 500]
+    poetry run python experimentos_heuristicas.py CNT-003 [--partidas 500] [--id CNT-003-r1]
+
+Si la carpeta de salida ya existe, el comando falla sin escribir nada.
 
 CNT-003 aplica los criterios de diseño del teórico a cada término ``fᵢ``:
   (2) costo de cálculo: tiempo medio por evaluación;
@@ -10,6 +12,7 @@ CNT-003 aplica los criterios de diseño del teórico a cada término ``fᵢ``:
 import argparse
 import statistics
 import time
+from pathlib import Path
 
 import numpy as np
 
@@ -17,7 +20,7 @@ from agentes_base import AgenteAleatorio
 from arena import jugar_partida
 from board import Board
 from heuristicas import TERMINOS, FuncionEvaluacion
-from registro import guardar_corrida
+from registro import CARPETA_EXPERIMENTOS, guardar_corrida
 
 ETAPAS = (("apertura", 1, 10), ("medio", 11, 20), ("final", 21, 42))
 
@@ -119,13 +122,25 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("experimento", choices=["CNT-003"])
     parser.add_argument("--partidas", type=int, default=500)
+    parser.add_argument(
+        "--id", dest="id_salida",
+        help="carpeta de salida dentro de experimentos/counter/ (por defecto, el ID del "
+             "experimento); para reproducir una corrida registrada usar un ID nuevo, "
+             "p. ej. CNT-003-r1",
+    )
+    parser.add_argument("--carpeta-base", type=Path, default=CARPETA_EXPERIMENTOS)
     args = parser.parse_args()
+
+    # Se rechaza la colisión antes de calcular para no sobrescribir una corrida registrada.
+    id_salida = args.id_salida or args.experimento
+    if (args.carpeta_base / id_salida).exists():
+        parser.error(f"Ya existe {args.carpeta_base / id_salida}; elegí otro --id.")
 
     inicio = time.perf_counter()
     configuracion, filas, resumen = cnt_003(args.partidas)
     resumen["duracion_total_s"] = round(time.perf_counter() - inicio, 1)
-    carpeta = guardar_corrida(args.experimento, configuracion, filas, resumen)
-    print(f"{args.experimento}: {len(filas)} posiciones en {resumen['duracion_total_s']} s -> {carpeta}")
+    carpeta = guardar_corrida(id_salida, configuracion, filas, resumen, carpeta_base=args.carpeta_base)
+    print(f"{id_salida}: {len(filas)} posiciones en {resumen['duracion_total_s']} s -> {carpeta}")
     for t, datos in resumen["terminos"].items():
         etapas = {e: d["correlacion"] for e, d in datos["por_etapa"].items()}
         print(f"  {t:16} r={datos['correlacion']}  signo={datos['acierto_de_signo']}  "

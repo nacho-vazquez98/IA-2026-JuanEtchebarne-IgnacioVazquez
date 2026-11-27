@@ -66,6 +66,7 @@ El `config.json` de CNT-002 indica `5fd8882-sucio`. El código era el del commit
 - **Hipótesis:** `lineas_de_3` (amenazas) debería ser el término más informativo, sobre todo hacia el final de la partida. `lineas_posibles`, el término del ejemplo de ta-te-ti, debería correlacionar positivamente pero con menos fuerza. `capturas` debería aportar porque las capturas pueden completar líneas.
 - **Configuración:** 500 partidas `AgenteAleatorio(s)` contra `AgenteAleatorio(10000 + s)`, s = 0–499. Se toman todos los estados no finales después de cada jugada (6 987 posiciones), vistos desde el jugador 1, con el resultado codificado como +1 (victoria), 0 (empate) o −1 (derrota). Etapas por jugadas ya hechas: apertura 1–10, medio 11–20, final 21–42. Costo: promedio de 5 pasadas sobre las posiciones de las partidas 0–49. Commit `83a3f2f`.
   - Comando: `poetry run python experimentos_heuristicas.py CNT-003 --partidas 500`
+  - Para reproducirla sin tocar esta corrida, usar un ID nuevo: `poetry run python experimentos_heuristicas.py CNT-003 --partidas 500 --id CNT-003-r1`. Si la carpeta ya existe, el comando falla sin escribir.
 - **Resultados** (en las partidas: 281 victorias del jugador 1, 219 del jugador 2, ningún empate):
 
   | Término | r de Pearson | Acierto de signo* | r en la apertura (4 637) | r en el medio (2 079) | r en el final (271) | Costo (µs) |

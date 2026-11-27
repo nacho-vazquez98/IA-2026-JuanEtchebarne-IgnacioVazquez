@@ -2,7 +2,12 @@
 
 Ejecutar desde ``ConnectFour/``: ``poetry run python -m unittest -v``
 """
+import json
+import subprocess
+import sys
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from agentes_base import AgenteAleatorio
 from arena import jugar_partida
@@ -139,6 +144,52 @@ class FuncionDeEvaluacion(unittest.TestCase):
             FuncionEvaluacion({"lineas_posibles": UTILIDAD_VICTORIA})
         with self.assertRaises(ValueError):
             FuncionEvaluacion({"inexistente": 1})
+
+    def test_rechaza_pesos_no_finitos_o_no_numericos(self):
+        for peso in (float("nan"), float("inf"), -float("inf"), "1", None, True):
+            with self.assertRaises(ValueError, msg=repr(peso)):
+                FuncionEvaluacion({"centro": peso})
+
+    def test_pesos_no_se_pueden_modificar_tras_validar_la_cota(self):
+        """Evita que un estado no final supere la utilidad de una victoria."""
+        f = FuncionEvaluacion({"centro": 1})
+        with self.assertRaises(TypeError):
+            f.pesos["centro"] = 1_000_001
+        b = tablero((3, 1))
+        self.assertFalse(b.is_final())
+        self.assertEqual(f(b, 1), 1)
+
+
+class CliExperimento(unittest.TestCase):
+    SCRIPT = Path(__file__).with_name("experimentos_heuristicas.py").resolve()
+
+    def ejecutar(self, *argumentos):
+        return subprocess.run(
+            [sys.executable, "-B", str(self.SCRIPT), "CNT-003", *argumentos],
+            capture_output=True, text=True, timeout=120,
+        )
+
+    def test_rechaza_sobrescribir_una_corrida_existente(self):
+        with TemporaryDirectory() as base:
+            existente = Path(base) / "CNT-003"
+            existente.mkdir()
+            (existente / "resumen.json").write_text("original", encoding="utf-8")
+            salida = self.ejecutar("--partidas", "1", "--carpeta-base", base)
+            self.assertEqual(salida.returncode, 2, salida.stderr)
+            self.assertEqual(sorted(p.name for p in existente.iterdir()), ["resumen.json"])
+            self.assertEqual((existente / "resumen.json").read_text(encoding="utf-8"), "original")
+
+    def test_replica_con_otro_id_no_toca_la_original(self):
+        with TemporaryDirectory() as base:
+            existente = Path(base) / "CNT-003"
+            existente.mkdir()
+            salida = self.ejecutar("--partidas", "1", "--carpeta-base", base, "--id", "CNT-003-r1")
+            self.assertEqual(salida.returncode, 0, salida.stderr)
+            self.assertEqual(list(existente.iterdir()), [])
+            replica = Path(base) / "CNT-003-r1"
+            self.assertTrue((replica / "partidas.csv").is_file())
+            config = json.loads((replica / "config.json").read_text(encoding="utf-8"))
+            self.assertEqual(config["id"], "CNT-003-r1")
 
 
 if __name__ == "__main__":

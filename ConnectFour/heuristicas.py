@@ -11,6 +11,10 @@ Cada término ``fᵢ`` se calcula desde el punto de vista de ``jugador`` como
 ejemplo de ta-te-ti. Los términos trabajan sobre las 69 ventanas de 4 celdas
 alineadas (horizontales, verticales y diagonales) de un tablero de 6×7.
 """
+import math
+from numbers import Real
+from types import MappingProxyType
+
 import numpy as np
 
 from board import Board
@@ -167,10 +171,15 @@ class FuncionEvaluacion:
         desconocidos = set(pesos) - set(TERMINOS)
         if desconocidos:
             raise ValueError(f"Términos desconocidos: {sorted(desconocidos)}")
+        for t, w in pesos.items():
+            if isinstance(w, bool) or not isinstance(w, Real) or not math.isfinite(w):
+                raise ValueError(f"El peso de {t} debe ser un número real finito: {w!r}")
         cota = sum(abs(w) * COTAS[t] for t, w in pesos.items())
         if cota >= UTILIDAD_VICTORIA:
             raise ValueError("Los pesos permiten que Eval alcance la utilidad de una victoria")
-        self.pesos = {t: w for t, w in pesos.items() if w != 0}
+        # Vista de solo lectura: cambiar un peso después de validar la cota podría
+        # hacer que un estado no final supere la utilidad de una victoria.
+        self.pesos = MappingProxyType({t: w for t, w in pesos.items() if w != 0})
         self.nombre = nombre or "+".join(f"{w}*{t}" for t, w in self.pesos.items())
 
     def terminos(self, board: Board, jugador: int) -> dict:
@@ -182,4 +191,4 @@ class FuncionEvaluacion:
         return sum(w * TERMINOS[t](board, jugador) for t, w in self.pesos.items())
 
     def __repr__(self):
-        return f"FuncionEvaluacion({self.nombre!r}, {self.pesos})"
+        return f"FuncionEvaluacion({self.nombre!r}, {dict(self.pesos)})"
