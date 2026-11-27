@@ -164,7 +164,7 @@ def guardar_resultados(destino, configuracion, filas, resumen, modelo=None):
                 json.dumps(datos, indent=2, ensure_ascii=False) + "\n", encoding="utf-8",
             )
         with (carpeta / "episodios.csv").open("w", newline="", encoding="utf-8") as archivo:
-            escritor = csv.DictWriter(archivo, fieldnames=filas[0].keys())
+            escritor = csv.DictWriter(archivo, fieldnames=filas[0].keys(), lineterminator="\n")
             escritor.writeheader()
             escritor.writerows(filas)
         if modelo is None:

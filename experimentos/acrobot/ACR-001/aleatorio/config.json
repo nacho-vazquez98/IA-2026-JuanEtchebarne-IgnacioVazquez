@@ -1,0 +1,17 @@
+{
+  "fecha_utc": "2026-11-27T01:16:09+00:00",
+  "commit": "275dd12d962bdcb610c8a39d2ef4de1fc4cb7767",
+  "gymnasium": "1.1.1",
+  "numpy": "1.26.4",
+  "entorno": "Acrobot-v1",
+  "max_pasos": 700,
+  "politica": "aleatoria",
+  "epsilon": null,
+  "modelo": null,
+  "sha256_modelo": null,
+  "conjunto": "validacion",
+  "episodios": 10,
+  "semilla_entorno_inicial": 100000,
+  "semilla_politica": 300000,
+  "gamma_evaluacion": 0.99
+}

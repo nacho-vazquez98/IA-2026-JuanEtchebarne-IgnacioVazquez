@@ -1,0 +1,31 @@
+{
+  "fecha_utc": "2026-11-27T01:16:06+00:00",
+  "commit": "275dd12d962bdcb610c8a39d2ef4de1fc4cb7767",
+  "gymnasium": "1.1.1",
+  "numpy": "1.26.4",
+  "entorno": "Acrobot-v1",
+  "max_pasos": 700,
+  "politica": "greedy",
+  "epsilon": 0,
+  "modelo": {
+    "version": 1,
+    "entorno": "Acrobot-v1",
+    "max_pasos": 700,
+    "algoritmo": "qlearning",
+    "grilla": "angular",
+    "alpha": 0.5,
+    "gamma": 0.99,
+    "episodios": 20,
+    "semilla_entorno_inicial": 10000,
+    "semilla_agente": 310001,
+    "decaimiento": "lineal_por_episodio",
+    "epsilon_inicial": 1,
+    "epsilon_final": 0.05
+  },
+  "sha256_modelo": "f42269e789a6c4e6fc9f58ddb68be4ba877c0b8c055c661111f954ea7614d23e",
+  "conjunto": "validacion",
+  "episodios": 10,
+  "semilla_entorno_inicial": 100000,
+  "semilla_politica": 300000,
+  "gamma_evaluacion": 0.99
+}
