@@ -34,6 +34,22 @@
       "pasos_entrenamiento": {
         "media": 5339702,
         "desviacion_entre_replicas": 16634.95359175973
+      },
+      "tasa_exito_entrenamiento": {
+        "media": 0.6131666666666666,
+        "desviacion_entre_replicas": 0.0027061657993060137
+      },
+      "exitos_ultimos_1000_entrenamiento": {
+        "media": 960,
+        "desviacion_entre_replicas": 10.44030650891055
+      },
+      "celdas_q_no_nulas": {
+        "media": 8789.333333333334,
+        "desviacion_entre_replicas": 98.46996157881516
+      },
+      "bytes_modelo_npz": {
+        "media": 68769.66666666667,
+        "desviacion_entre_replicas": 709.8241566284803
       }
     },
     "directa": {
@@ -60,21 +76,54 @@
       "pasos_entrenamiento": {
         "media": 6384479,
         "desviacion_entre_replicas": 14434.56781479792
+      },
+      "tasa_exito_entrenamiento": {
+        "media": 0.2794333333333333,
+        "desviacion_entre_replicas": 0.0045500915741700535
+      },
+      "exitos_ultimos_1000_entrenamiento": {
+        "media": 664.3333333333334,
+        "desviacion_entre_replicas": 8.386497083606082
+      },
+      "celdas_q_no_nulas": {
+        "media": 2385.6666666666665,
+        "desviacion_entre_replicas": 24.826061575153908
+      },
+      "bytes_modelo_npz": {
+        "media": 20131.333333333332,
+        "desviacion_entre_replicas": 160.0666527835618
       }
     }
   },
   "pares": [
     {
       "semilla_entorno": 10000,
-      "retorno_directa_menos_angular": 169.577
+      "retorno_directa_menos_angular": 169.577,
+      "retorno_descontado_directa_menos_angular": 7.435558497442088
     },
     {
       "semilla_entorno": 20000,
-      "retorno_directa_menos_angular": -198.58299999999997
+      "retorno_directa_menos_angular": -198.58299999999997,
+      "retorno_descontado_directa_menos_angular": -5.548259912087545
     },
     {
       "semilla_entorno": 30000,
-      "retorno_directa_menos_angular": -2.5219999999999914
+      "retorno_directa_menos_angular": -2.5219999999999914,
+      "retorno_descontado_directa_menos_angular": -0.6533011386508889
     }
-  ]
+  ],
+  "diferencias_emparejadas": {
+    "retorno_directa_menos_angular": {
+      "pares": 3,
+      "media": -10.509333333333322,
+      "desviacion_muestral": 184.20991971208642,
+      "error_estandar": 106.35364673317245
+    },
+    "retorno_descontado_directa_menos_angular": {
+      "pares": 3,
+      "media": 0.4113324822345514,
+      "desviacion_muestral": 6.557054878750816,
+      "error_estandar": 3.785717399337933
+    }
+  }
 }

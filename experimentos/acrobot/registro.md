@@ -80,13 +80,14 @@ presupuestos por fase. Los resultados crudos están en las carpetas de cada ID.
   La diferencia en retorno descontado fue de 1,92 puntos. Queda reservada
   la evaluación final para después de seleccionar las configuraciones.
 
-## ACR-004 a ACR-008 — Comparación de grillas
+## ACR-004 a ACR-008 — Comparación de grillas, iteración 1
 
 - **Fecha y autor** — 2026-11-27, Codex en Codex Cloud.
-- **Tarea** — A06. Completar tres réplicas por grilla junto con ACR-002 y
-  comparar contra ACR-003. Se contrasta si representar los ángulos y refinar
-  los intervalos de velocidad alrededor de cero mejora el retorno manteniendo
-  el tamaño de la tabla.
+- **Tarea e hipótesis** — A06, primera iteración. La grilla angular propuesta
+  en A02 elimina combinaciones de seno y coseno incompatibles con el círculo
+  unitario y refina los bordes de velocidad cerca de cero. Se esperaba que
+  esa resolución mejorara el aprendizaje y, posiblemente, el retorno greedy
+  al mantener fijo el tamaño nominal de la tabla.
 - **Configuración** — Código `2d2aa4f` para las cinco corridas nuevas y
   `82ebb03` para ACR-002. Los archivos del agente, las grillas y el lock
   coinciden en ambos commits. Se mantuvieron α = 0,5, γ = 0,99, ε lineal de
@@ -94,56 +95,74 @@ presupuestos por fase. Los resultados crudos están en las carpetas de cada ID.
   episodios y se validó con ε = 0 en las mismas 1.000 semillas que ACR-003.
   Las semillas de agente correspondientes a las de entorno 10.000, 20.000
   y 30.000 fueron 310.001, 310.002 y 310.003.
-- **Resultados por réplica** — Cada fila refiere a una única tabla Q
-  guardada y a su evaluación greedy en un proceso independiente.
 
-| Corrida | Grilla | Semilla de entrenamiento | Retorno de validación | Éxito | Pasos de entrenamiento | Entrenamiento (s) | Validación (s) |
+| Corrida | Grilla | Semilla | Éxito en entrenamiento | Éxitos en los últimos 1.000 | Retorno greedy | Éxito greedy | Pasos de entrenamiento |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [ACR-002](ACR-002/) | Angular | 10.000 | −437,78 | 94,1 % | 5.355.582 | 503,3 | 42,4 |
-| [ACR-004](ACR-004/) | Angular | 20.000 | −286,19 | 100,0 % | 5.322.403 | 936,3 | 28,2 |
-| [ACR-005](ACR-005/) | Angular | 30.000 | −258,23 | 98,9 % | 5.341.121 | 944,2 | 27,0 |
-| [ACR-006](ACR-006/) | Directa | 10.000 | −268,20 | 98,7 % | 6.386.171 | 859,9 | 46,6 |
-| [ACR-007](ACR-007/) | Directa | 20.000 | −484,78 | 88,1 % | 6.397.993 | 857,3 | 87,6 |
-| [ACR-008](ACR-008/) | Directa | 30.000 | −260,75 | 100,0 % | 6.369.273 | 650,7 | 27,8 |
+| [ACR-002](ACR-002/) | Angular | 10.000 | 61,38 % | 955 | −437,78 | 94,1 % | 5.355.582 |
+| [ACR-004](ACR-004/) | Angular | 20.000 | 61,55 % | 972 | −286,19 | 100,0 % | 5.322.403 |
+| [ACR-005](ACR-005/) | Angular | 30.000 | 61,02 % | 953 | −258,23 | 98,9 % | 5.341.121 |
+| [ACR-006](ACR-006/) | Directa | 10.000 | 27,94 % | 659 | −268,20 | 98,7 % | 6.386.171 |
+| [ACR-007](ACR-007/) | Directa | 20.000 | 27,49 % | 660 | −484,78 | 88,1 % | 6.397.993 |
+| [ACR-008](ACR-008/) | Directa | 30.000 | 28,40 % | 674 | −260,75 | 100,0 % | 6.369.273 |
 
-Las métricas agregadas promedian las réplicas de cada grilla. El retorno sin
-descuento incluye la desviación estándar muestral entre réplicas.
+Las métricas agregadas dan el mismo peso a cada réplica. Los pasos por episodio
+exitoso se calculan primero dentro de cada réplica y luego se promedian.
+El retorno sin descuento incluye la desviación estándar muestral entre réplicas.
 
-| Política | Retorno sin descuento | Retorno descontado | Éxito | Pasos entre éxitos | Máximo Q inicial | Millones de pasos de entrenamiento |
+| Política | Retorno sin descuento | Retorno descontado | Éxito greedy | Pasos por episodio exitoso | Máximo Q inicial | Millones de pasos de entrenamiento |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Angular | −327,40 ± 96,61 | −93,78 | 97,7 % | 321,28 | −57,17 | 5,34 |
 | Directa | −337,91 ± 127,25 | −93,37 | 95,6 % | 327,32 | −76,34 | 6,38 |
 | Aleatoria (ACR-003) | −691,55 | −99,87 | 6,3 % | 566,90 | — | — |
 
-- **Diferencias emparejadas** — Retorno de la directa menos retorno de la
-  angular por semilla de entrenamiento. 10.000 → 169,58, 20.000 → −198,58, 30.000 → −2,52.
-- **Costo** — Ambas grillas usan 9.216 estados y 27.648 celdas Q. La tabla
-  densa ocupa 221.184 bytes (216 KiB). La media de pasos de entrenamiento
-  angular fue 5.339.702 frente a 6.384.479 para
-  la directa. Las cinco corridas nuevas tomaron 26 min 29 s de reloj
-  con hasta cuatro procesos concurrentes. ACR-002 corrió sola. Para comparar
-  costo de simulación se usan los pasos y se conservan por separado
-  [los tiempos por fase](A06/tiempos_proceso.csv).
-- **Conclusión** — La grilla angular obtuvo el mayor retorno promedio por
-  10,51 puntos y quedó por delante en 2 de los tres
-  pares de semillas. La dispersión entre réplicas y el tamaño de la muestra
-  se deben tener en cuenta al elegir. Con el retorno descontado, la directa
-  obtuvo una media 0,41 puntos mayor. El descuento reduce el peso de las
-  demoras tardías y aquí cambia el orden entre variantes. La comparación
-  mide el efecto conjunto
-  de los bordes de velocidad y la representación angular. Ambas variantes
-  se conservan para A07, donde se probará si cambia el orden al ajustar
-  los hiperparámetros. El conjunto final queda reservado para la selección.
+- **Entrenamiento** — Con el mismo ε decreciente, la angular obtuvo 61,32 %
+  de éxito en promedio y 960 éxitos en los últimos 1.000 episodios por réplica.
+  La directa obtuvo 27,94 % y 664,33 éxitos, respectivamente. La angular
+  tuvo 16,4 % menos interacciones en los 10.000 episodios porque alcanzó
+  el objetivo antes del límite con mayor frecuencia. El panel de entrenamiento
+  del gráfico muestra tasas desde cero.
+- **Validación emparejada** — Las diferencias de retorno angular menos
+  directa fueron −169,58, +198,58 y +2,52 para las semillas 10.000, 20.000 y
+  30.000. La media de 10,51 puntos queda muy por debajo de la desviación
+  muestral de 184,21 y del error estándar de 106,35 (tres pares). Con
+  descuento, la directa queda 0,41 por encima y el error estándar es 3,79.
+  La muestra es insuficiente para distinguir las políticas greedy.
+- **Uso efectivo de la tabla** — Ambas grillas reservan 9.216 estados y
+  27.648 celdas Q. La tabla densa ocupa 221.184 bytes (216 KiB). Al final
+  quedaron, en promedio, 8.789 celdas Q con valor distinto de cero en la
+  angular y 2.386 en la directa (3,68 veces más en la angular). Los modelos
+  comprimidos promediaron 68,8 kB y 20,1 kB, respectivamente. Las celdas
+  con valor distinto de cero son un indicador indirecto del uso de la tabla.
+  Las combinaciones trigonométricas imposibles y los intervalos de velocidad
+  más anchos de la grilla directa son explicaciones plausibles. Para la
+  segunda se necesitarían observaciones por estado para medir la ocupación.
+- **Costo y tiempos** — Las cinco corridas nuevas tomaron 26 min 29 s de
+  reloj con hasta cuatro procesos concurrentes. ACR-002 corrió sola. En las
+  cinco corridas nuevas se midió cada fase con `time -p` de Bash. Los
+  [tiempos por fase](A06/tiempos_proceso.csv) incluyen el proceso completo
+  y registran `real`, `user` y `sys`. El campo `segundos` de los resúmenes
+  se mide dentro del programa y empieza con el bucle de episodios.
+- **Siguiente iteración de A06** — Mantener la representación directa y
+  sus 6 intervalos por velocidad, con bordes en las fracciones
+  `[-1, -0.5, -0.125, 0, 0.125, 0.5, 1]` de cada velocidad máxima.
+  La hipótesis es que estos bordes aumentarán el uso de la tabla cerca de
+  cero y mejorarán la tasa de éxito de entrenamiento frente a la directa
+  uniforme. Compararlas con la misma representación, tamaño, parámetros y
+  semillas separa el efecto de los bordes de velocidad. La validación
+  greedy permitirá comprobar si ese efecto se traslada a la política. Ambas
+  grillas iniciales se conservan como referencia y el conjunto final queda
+  reservado para después de la selección.
 - **Evidencia** — [Comparación visual](A06/comparacion.png),
   [tabla por réplica](A06/replicas.csv) y [agregados](A06/resumen.json).
   Desde `Acrobot/`, el resumen se puede reconstruir con
   `poetry run python comparar_grillas.py --salida /ruta/a/una/carpeta-nueva`.
 
-Para reproducir una réplica, se sustituyen la grilla y las semillas según su
-fila y se usa una carpeta de salida nueva:
+En Codex Cloud se midió con Bash y el intérprete de la `.venv` de Poetry.
+Para reproducir ACR-004 y sus dos mediciones de proceso:
 
 ```sh
 salida="$(mktemp -d)"
-poetry run python experimentos_qlearning.py entrenar --grilla angular --semilla 20000 --semilla-agente 310002 --salida "$salida/entrenamiento"
-poetry run python experimentos_qlearning.py evaluar --conjunto validacion --modelo "$salida/entrenamiento/modelo.npz" --salida "$salida/validacion"
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLBACKEND=Agg
+(time -p .venv/bin/python -B experimentos_qlearning.py entrenar --grilla angular --episodios 10000 --semilla 20000 --semilla-agente 310002 --alpha 0.5 --gamma 0.99 --epsilon-inicial 1 --epsilon-final 0.05 --salida "$salida/entrenamiento") 2> "$salida/entrenamiento.tiempo"
+(time -p .venv/bin/python -B experimentos_qlearning.py evaluar --conjunto validacion --episodios 1000 --modelo "$salida/entrenamiento/modelo.npz" --salida "$salida/validacion") 2> "$salida/validacion.tiempo"
 ```

@@ -134,20 +134,22 @@ y comparar las variantes en A06.
   entorno Poetry de Acrobot.
 - **Protocolo** — [Protocolo experimental y comandos](experimentos/acrobot/protocolo.md).
 
-### 2026-11-27 — ACROBAT — Comparación emparejada de grillas
+### 2026-11-27 — ACROBAT — Primera comparación emparejada de grillas
 
-- **Tarea** — A06.
-- **Decisión** — Mantener las dos grillas para A07 y usar el retorno observado
-  sin descuento como criterio principal. Se emparejaron las semillas de
-  entrenamiento y se usaron las mismas semillas de validación.
-- **Resultado** — La grilla angular obtuvo el mayor retorno promedio por
-  10,51 puntos y quedó por delante en 2 de las tres
-  semillas emparejadas. La grilla angular usó 16,4 % menos
-  pasos de entrenamiento en promedio. Ambas tablas densas ocupan 216 KiB.
-- **Evidencia** — [Registro de la comparación](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas).
-  Se conserva cada modelo y la dispersión entre réplicas junto a las
-  métricas de validación. Se comparan pasos de simulación debido a la
-  diferencia de concurrencia entre la corrida inicial y las nuevas.
+- **Tarea** — A06, iteración 1.
+- **Decisión** — Conservar ambas grillas como referencia. La diferencia
+  media de retorno greedy de 10,51 puntos tiene una desviación estándar
+  de 184,21 entre los tres pares, así que la muestra es insuficiente para
+  distinguir las políticas finales.
+- **Resultado** — Durante el entrenamiento, la angular alcanzó el objetivo
+  en 61,32 % de los episodios y la directa en 27,94 %. Con el mismo número
+  de episodios, la angular realizó 16,4 % menos pasos. Las dos tablas
+  ocupan 216 KiB y la angular terminó con 3,68 veces más celdas Q con
+  valor distinto de cero.
+- **Siguiente hipótesis** — Probar bordes de velocidad más finos cerca de
+  cero en la directa, con la misma representación y cantidad de intervalos,
+  para medir el efecto de los bordes sobre el aprendizaje.
+- **Evidencia** — [Registro y resultados](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas-iteración-1).
 
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 

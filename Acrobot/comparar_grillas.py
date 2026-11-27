@@ -9,12 +9,14 @@ from pathlib import Path
 from statistics import mean, stdev
 
 from experimentos_qlearning import (
+    ENTORNO,
     EPISODIOS_ENTRENAMIENTO,
     EPISODIOS_EVALUACION,
     GAMMA_EVALUACION,
     MAX_PASOS,
     SEMILLAS_EVALUACION,
     SEMILLA_POLITICA,
+    VERSION_MODELO,
     resumir_evaluacion,
 )
 
@@ -50,6 +52,7 @@ def leer_episodios(carpeta, primera_semilla, cantidad):
 def medir_validacion(carpeta, politica):
     config = leer_json(carpeta, "config.json")
     campos = {
+        "entorno": ENTORNO, "episodios": EPISODIOS_EVALUACION,
         "politica": politica, "conjunto": "validacion", "max_pasos": MAX_PASOS,
         "gamma_evaluacion": GAMMA_EVALUACION, "semilla_politica": SEMILLA_POLITICA,
     }
@@ -92,6 +95,8 @@ def medir_replica(raiz, id_corrida, grilla, semilla, semilla_agente):
     carpeta = raiz / id_corrida / "entrenamiento"
     config = leer_json(carpeta, "config.json")
     campos = {
+        "algoritmo": "qlearning", "entorno": ENTORNO, "version": VERSION_MODELO,
+        "episodios": EPISODIOS_ENTRENAMIENTO,
         "grilla": grilla, "alpha": 0.5, "gamma": 0.99, "epsilon_inicial": 1,
         "epsilon_final": 0.05, "decaimiento": "lineal_por_episodio", "max_pasos": MAX_PASOS,
         "semilla_entorno_inicial": semilla, "semilla_agente": semilla_agente,
@@ -106,6 +111,10 @@ def medir_replica(raiz, id_corrida, grilla, semilla, semilla_agente):
         raise ValueError(f"Secuencia de ε incompatible en {carpeta}.")
 
     resumen = leer_json(carpeta, "resumen.json")
+    exitos = [fila["terminado"] == "True" for fila in filas]
+    tasa_exito = sum(exitos) / len(exitos)
+    if not math.isclose(tasa_exito, resumen["tasa_exito"]):
+        raise ValueError(f"La tasa de éxito de entrenamiento no coincide en {carpeta}.")
     tabla = carpeta / "modelo.npz"
     validacion = raiz / id_corrida / "validacion"
     hash_modelo = hashlib.sha256(tabla.read_bytes()).hexdigest()
@@ -117,6 +126,8 @@ def medir_replica(raiz, id_corrida, grilla, semilla, semilla_agente):
         "semilla_entorno": semilla,
         "semilla_agente": semilla_agente,
         "pasos_entrenamiento": sum(int(fila["pasos"]) for fila in filas),
+        "tasa_exito_entrenamiento": tasa_exito,
+        "exitos_ultimos_1000_entrenamiento": sum(exitos[-1_000:]),
         "segundos_entrenamiento": resumen["segundos"],
         "bytes_tabla_q": resumen["bytes_tabla_q"],
         "bytes_modelo_npz": tabla.stat().st_size,
@@ -129,19 +140,21 @@ def graficar(replicas, referencia, destino):
     from matplotlib.figure import Figure
 
     figura = Figure(figsize=(9.8, 4.3), layout="constrained")
-    retorno, costo = figura.subplots(1, 2)
+    retorno, exito = figura.subplots(1, 2)
     posiciones = [1, 2]
     for indice, semilla in enumerate(SEMILLAS):
-        filas = [fila for fila in replicas if fila["semilla_entorno"] == semilla]
+        por_grilla = {f["grilla"]: f for f in replicas if f["semilla_entorno"] == semilla}
+        filas = [por_grilla["angular"], por_grilla["directa"]]
         etiqueta = f"Semilla {semilla:,}".replace(",", ".")
         retorno.plot(posiciones, [f["retorno_promedio"] for f in filas], "o-", label=etiqueta)
-        costo.plot(posiciones, [f["pasos_entrenamiento"] / 1e6 for f in filas], "o-",
+        exito.plot(posiciones, [100 * f["tasa_exito_entrenamiento"] for f in filas], "o-",
                    color=f"C{indice}")
     retorno.axhline(referencia["retorno_promedio"], linestyle="--", color="#555555",
                     label="Agente aleatorio")
     retorno.set(title="Utilidad media en validación", ylabel="Retorno sin descuento")
-    costo.set(title="Interacciones durante el entrenamiento", ylabel="Millones de pasos")
-    for eje in (retorno, costo):
+    exito.set(title="Éxito durante el entrenamiento", ylabel="Episodios exitosos (%)",
+              ylim=(0, 100))
+    for eje in (retorno, exito):
         eje.set_xticks(posiciones, ["Angular", "Directa"])
         eje.set_xlim(0.8, 2.2)
         eje.grid(axis="y", alpha=0.25)
@@ -155,6 +168,8 @@ def main():
                         default=Path(__file__).resolve().parents[1] / "experimentos/acrobot")
     parser.add_argument("--salida", type=Path, required=True, help="Carpeta nueva para el resumen")
     args = parser.parse_args()
+    if args.salida.exists():
+        parser.error(f"Ya existe la carpeta {args.salida}.")
     resultados = [
         medir_replica(args.datos, id_corrida, grilla, semilla, 310_000 + indice)
         for grilla, ids in REPLICAS.items()
@@ -165,6 +180,8 @@ def main():
     metricas = (
         "retorno_promedio", "retorno_descontado_promedio", "tasa_exito",
         "pasos_promedio_exitos", "max_q_inicial_promedio", "pasos_entrenamiento",
+        "tasa_exito_entrenamiento", "exitos_ultimos_1000_entrenamiento",
+        "celdas_q_no_nulas", "bytes_modelo_npz",
     )
     for grilla in REPLICAS:
         filas = [f for f in resultados if f["grilla"] == grilla]
@@ -178,13 +195,33 @@ def main():
 
     pares = []
     for semilla in SEMILLAS:
-        angular, directa = [f for f in resultados if f["semilla_entorno"] == semilla]
+        por_grilla = {f["grilla"]: f for f in resultados if f["semilla_entorno"] == semilla}
+        angular = por_grilla["angular"]
+        directa = por_grilla["directa"]
         pares.append({
             "semilla_entorno": semilla,
             "retorno_directa_menos_angular": directa["retorno_promedio"] - angular["retorno_promedio"],
+            "retorno_descontado_directa_menos_angular": (
+                directa["retorno_descontado_promedio"] - angular["retorno_descontado_promedio"]
+            ),
         })
-    resumen = {"referencia": referencia, "grillas": agrupado, "pares": pares}
-    args.salida.mkdir(parents=True)
+
+    diferencias = {}
+    for campo in ("retorno_directa_menos_angular", "retorno_descontado_directa_menos_angular"):
+        valores = [par[campo] for par in pares]
+        desviacion = stdev(valores)
+        diferencias[campo] = {
+            "pares": len(valores), "media": mean(valores), "desviacion_muestral": desviacion,
+            "error_estandar": desviacion / math.sqrt(len(valores)),
+        }
+    resumen = {
+        "referencia": referencia, "grillas": agrupado, "pares": pares,
+        "diferencias_emparejadas": diferencias,
+    }
+    try:
+        args.salida.mkdir(parents=True)
+    except FileExistsError:
+        parser.error(f"Ya existe la carpeta {args.salida}.")
     with (args.salida / "replicas.csv").open("w", newline="", encoding="utf-8") as archivo:
         escritor = csv.DictWriter(archivo, fieldnames=resultados[0].keys(), lineterminator="\n")
         escritor.writeheader()
