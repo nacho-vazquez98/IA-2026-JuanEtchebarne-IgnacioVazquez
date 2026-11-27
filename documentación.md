@@ -133,6 +133,10 @@ y comparar las variantes en A06.
   no actualiza la tabla. Se usa Matplotlib para generar el gráfico en el
   entorno Poetry de Acrobot.
 - **Protocolo** — [Protocolo experimental y comandos](experimentos/acrobot/protocolo.md).
+- **Diseño de Dyna‑Q (A09)** — Se reutiliza la actualización tabular de
+  Q-Learning y se añade planificación con la última transición real
+  observada por par estado y acción. Los casos de terminación, truncamiento
+  y equivalencia con n = 0 se detallan en el [diseño para Acrobot](Acrobot/diseno_dyna_q.md).
 
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
