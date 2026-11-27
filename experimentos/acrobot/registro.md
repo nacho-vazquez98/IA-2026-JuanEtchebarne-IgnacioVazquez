@@ -166,3 +166,53 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLBACKEND=Agg
 (time -p .venv/bin/python -B experimentos_qlearning.py entrenar --grilla angular --episodios 10000 --semilla 20000 --semilla-agente 310002 --alpha 0.5 --gamma 0.99 --epsilon-inicial 1 --epsilon-final 0.05 --salida "$salida/entrenamiento") 2> "$salida/entrenamiento.tiempo"
 (time -p .venv/bin/python -B experimentos_qlearning.py evaluar --conjunto validacion --episodios 1000 --modelo "$salida/entrenamiento/modelo.npz" --salida "$salida/validacion") 2> "$salida/validacion.tiempo"
 ```
+
+## ACR-009 y ACR-010 — Piloto de la segunda iteración de grillas
+
+- **Fecha y autor** — 2026-11-27, Codex en Codex Cloud.
+- **Tarea** — A06, iteración 2. Comprobar el ciclo de entrenamiento y evaluación
+  de `directa_no_uniforme` y examinar si vale la pena ejecutar el protocolo formal.
+- **Hipótesis** — Bordes de velocidad más finos cerca de cero pueden aumentar
+  el uso efectivo de la tabla y mejorar el aprendizaje de la grilla directa.
+  La variante conserva los senos y cosenos, sus intervalos y seis intervalos
+  para cada velocidad. Los bordes de velocidad son las fracciones
+  `[-1, -0.5, -0.125, 0, 0.125, 0.5, 1]` de su máximo declarado.
+  La tabla tiene 27.648 celdas y ocupa 216 KiB en las dos variantes.
+- **Configuración** — Commit `cdab502` para las dos corridas. 100 episodios
+  de entrenamiento, semillas de entorno 10.000–10.099 y semilla del agente
+  310.001, α = 0,5, γ = 0,99 y ε lineal de 1 a 0,05. Validación greedy en
+  otro proceso con las mismas 30 semillas de entorno (100.000–100.029) y
+  semilla de la política 300.000. Se usaron 700 pasos máximos por episodio.
+  La referencia aleatoria es el subconjunto de ACR-003 con las mismas
+  30 semillas de validación.
+
+| Variante | Éxitos en entrenamiento | Celdas Q distintas de cero | Retorno greedy medio | Éxitos greedy | Pasos por episodio exitoso |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [ACR-009, directa uniforme](ACR-009/) | 30/100 | 1.505 | −698,90 | 1/30 | 668,00 |
+| [ACR-010, directa no uniforme](ACR-010/) | 42/100 | 3.758 | −432,20 | 25/30 | 379,64 |
+| [ACR-003, referencia aleatoria](ACR-003/) | — | — | −696,77 | 1/30 | 604,00 |
+
+- **Tiempo** — La directa uniforme tardó 6,61 s en entrenar y 2,12 s en
+  validar. La no uniforme tardó 5,81 s y 1,24 s, respectivamente.
+- **Verificación** — Se reconstruyeron las métricas de ambos CSV y se
+  comprobaron las semillas, la forma de las tablas Q y las huellas de los
+  dos modelos. Las configuraciones de entrenamiento difieren solo en la
+  grilla. Pasaron 21 pruebas, incluidas dos nuevas para forma, representación
+  trigonométrica, repetibilidad, fronteras y saturación.
+- **Conclusión** — La variante funcionó y produjo más celdas Q con valor
+  distinto de cero y un mejor retorno en este piloto. La única semilla de
+  entrenamiento y el horizonte reducido limitan la comparación. La prueba
+  formal necesita tres réplicas de 10.000 episodios, emparejadas con
+  ACR-006–ACR-008, y 1.000 episodios de validación por réplica. Con ese
+  resultado se decidirá qué discretizaciones pasar a A07.
+
+Para reproducir el piloto desde `Acrobot/`, con una carpeta de salida nueva
+por variante:
+
+```sh
+salida="$(mktemp -d)"
+for grilla in directa directa_no_uniforme; do
+    poetry run python -B experimentos_qlearning.py entrenar --grilla "$grilla" --episodios 100 --semilla 10000 --semilla-agente 310001 --alpha 0.5 --gamma 0.99 --epsilon-inicial 1 --epsilon-final 0.05 --salida "$salida/$grilla/entrenamiento"
+    poetry run python -B experimentos_qlearning.py evaluar --conjunto validacion --episodios 30 --modelo "$salida/$grilla/entrenamiento/modelo.npz" --salida "$salida/$grilla/validacion"
+done
+```

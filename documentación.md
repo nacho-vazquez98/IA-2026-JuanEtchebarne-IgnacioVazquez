@@ -151,6 +151,21 @@ y comparar las variantes en A06.
   para medir el efecto de los bordes sobre el aprendizaje.
 - **Evidencia** — [Registro y resultados](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas-iteración-1).
 
+### 2026-11-27 — ACROBAT — Resolución de velocidad en la grilla directa
+
+- **Tarea** — A06, iteración 2.
+- **Decisión** — Agregar `directa_no_uniforme`, una variante que conserva
+  la representación trigonométrica y la cantidad de intervalos. Los
+  bordes de velocidad concentran resolución alrededor de cero y mantienen
+  los límites de Acrobot-v1.
+- **Motivo** — La comparación inicial cambió la representación y los
+  bordes de velocidad a la vez. Esta variante permite medir el efecto
+  de los bordes con el mismo tamaño nominal de tabla.
+- **Evidencia** — Con una semilla y 100 episodios de entrenamiento, la
+  variante obtuvo 25 éxitos de 30 en validación frente a 1 de 30 de la
+  directa uniforme. Se necesita la comparación emparejada formal para
+  decidir su incorporación a A07. [Registro del piloto](experimentos/acrobot/registro.md#acr-009-y-acr-010--piloto-de-la-segunda-iteración-de-grillas).
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas
