@@ -1,0 +1,80 @@
+{
+  "referencia": {
+    "episodios": 1000,
+    "retorno_promedio": -691.552,
+    "desviacion_retorno": 42.177094447104814,
+    "retorno_descontado_promedio": -99.87440747573507,
+    "max_q_inicial_promedio": null,
+    "tasa_exito": 0.063,
+    "pasos_promedio_exitos": 566.9047619047619,
+    "segundos_validacion": 42.21792696900002
+  },
+  "grillas": {
+    "angular": {
+      "retorno_promedio": {
+        "media": -327.40066666666667,
+        "desviacion_entre_replicas": 96.6067446368696
+      },
+      "retorno_descontado_promedio": {
+        "media": -93.77868952390504,
+        "desviacion_entre_replicas": 3.7838411926654225
+      },
+      "tasa_exito": {
+        "media": 0.9766666666666667,
+        "desviacion_entre_replicas": 0.031374086972107015
+      },
+      "pasos_promedio_exitos": {
+        "media": 321.28245231947454,
+        "desviacion_entre_replicas": 89.04622489028515
+      },
+      "max_q_inicial_promedio": {
+        "media": -57.16771411878557,
+        "desviacion_entre_replicas": 2.019914006539418
+      },
+      "pasos_entrenamiento": {
+        "media": 5339702,
+        "desviacion_entre_replicas": 16634.95359175973
+      }
+    },
+    "directa": {
+      "retorno_promedio": {
+        "media": -337.91,
+        "desviacion_entre_replicas": 127.24507325236603
+      },
+      "retorno_descontado_promedio": {
+        "media": -93.36735704167049,
+        "desviacion_entre_replicas": 4.341119611530295
+      },
+      "tasa_exito": {
+        "media": 0.956,
+        "desviacion_entre_replicas": 0.06527633568147036
+      },
+      "pasos_promedio_exitos": {
+        "media": 327.323897900861,
+        "desviacion_entre_replicas": 112.0516631688035
+      },
+      "max_q_inicial_promedio": {
+        "media": -76.3440352499686,
+        "desviacion_entre_replicas": 0.6097606793134613
+      },
+      "pasos_entrenamiento": {
+        "media": 6384479,
+        "desviacion_entre_replicas": 14434.56781479792
+      }
+    }
+  },
+  "pares": [
+    {
+      "semilla_entorno": 10000,
+      "retorno_directa_menos_angular": 169.577
+    },
+    {
+      "semilla_entorno": 20000,
+      "retorno_directa_menos_angular": -198.58299999999997
+    },
+    {
+      "semilla_entorno": 30000,
+      "retorno_directa_menos_angular": -2.5219999999999914
+    }
+  ]
+}

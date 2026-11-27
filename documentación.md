@@ -134,6 +134,21 @@ y comparar las variantes en A06.
   entorno Poetry de Acrobot.
 - **Protocolo** — [Protocolo experimental y comandos](experimentos/acrobot/protocolo.md).
 
+### 2026-11-27 — ACROBAT — Comparación emparejada de grillas
+
+- **Tarea** — A06.
+- **Decisión** — Mantener las dos grillas para A07 y usar el retorno observado
+  sin descuento como criterio principal. Se emparejaron las semillas de
+  entrenamiento y se usaron las mismas semillas de validación.
+- **Resultado** — La grilla angular obtuvo el mayor retorno promedio por
+  10,51 puntos y quedó por delante en 2 de las tres
+  semillas emparejadas. La grilla angular usó 16,4 % menos
+  pasos de entrenamiento en promedio. Ambas tablas densas ocupan 216 KiB.
+- **Evidencia** — [Registro de la comparación](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas).
+  Se conserva cada modelo y la dispersión entre réplicas junto a las
+  métricas de validación. Se comparan pasos de simulación debido a la
+  diferencia de concurrencia entre la corrida inicial y las nuevas.
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas

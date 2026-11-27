@@ -1,0 +1,11 @@
+id,fase,segundos_reloj,segundos_cpu_usuario,segundos_cpu_sistema
+ACR-004,entrenamiento,936.55,933.42,0.13
+ACR-004,validacion,29.47,29.21,0.19
+ACR-005,entrenamiento,944.49,941.83,0.16
+ACR-005,validacion,28.28,28.17,0.08
+ACR-006,entrenamiento,860.27,857.75,0.2
+ACR-006,validacion,48.85,48.52,0.26
+ACR-007,entrenamiento,857.65,855.44,0.24
+ACR-007,validacion,89.67,89.33,0.18
+ACR-008,entrenamiento,651.06,650.59,0.12
+ACR-008,validacion,29.2,28.98,0.21
