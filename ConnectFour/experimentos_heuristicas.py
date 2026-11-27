@@ -10,6 +10,7 @@ CNT-003 aplica los criterios de diseño del teórico a cada término ``fᵢ``:
   (3) correlación de ``fᵢ(s)`` con el resultado real de la partida.
 """
 import argparse
+import shutil
 import statistics
 import time
 from pathlib import Path
@@ -131,15 +132,29 @@ def main():
     parser.add_argument("--carpeta-base", type=Path, default=CARPETA_EXPERIMENTOS)
     args = parser.parse_args()
 
-    # Se rechaza la colisión antes de calcular para no sobrescribir una corrida registrada.
-    id_salida = args.id_salida or args.experimento
-    if (args.carpeta_base / id_salida).exists():
-        parser.error(f"Ya existe {args.carpeta_base / id_salida}; elegí otro --id.")
+    if args.partidas < 1:
+        parser.error("--partidas debe ser al menos 1.")
 
-    inicio = time.perf_counter()
-    configuracion, filas, resumen = cnt_003(args.partidas)
-    resumen["duracion_total_s"] = round(time.perf_counter() - inicio, 1)
-    carpeta = guardar_corrida(id_salida, configuracion, filas, resumen, carpeta_base=args.carpeta_base)
+    # Se reserva la carpeta con un mkdir exclusivo (atómico en el sistema de
+    # archivos) antes de calcular: si ya existe, o si otro proceso la reservó
+    # primero, se rechaza sin escribir nada y la corrida registrada queda intacta.
+    id_salida = args.id_salida or args.experimento
+    reservada = args.carpeta_base / id_salida
+    args.carpeta_base.mkdir(parents=True, exist_ok=True)
+    try:
+        reservada.mkdir()
+    except FileExistsError:
+        parser.error(f"Ya existe {reservada}; elegí otro --id.")
+
+    try:
+        inicio = time.perf_counter()
+        configuracion, filas, resumen = cnt_003(args.partidas)
+        resumen["duracion_total_s"] = round(time.perf_counter() - inicio, 1)
+        carpeta = guardar_corrida(id_salida, configuracion, filas, resumen, carpeta_base=args.carpeta_base)
+    except BaseException:
+        # La carpeta la creó este proceso: se elimina para no dejar una corrida parcial.
+        shutil.rmtree(reservada, ignore_errors=True)
+        raise
     print(f"{id_salida}: {len(filas)} posiciones en {resumen['duracion_total_s']} s -> {carpeta}")
     for t, datos in resumen["terminos"].items():
         etapas = {e: d["correlacion"] for e, d in datos["por_etapa"].items()}

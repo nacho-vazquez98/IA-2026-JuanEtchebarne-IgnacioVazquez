@@ -8,6 +8,11 @@ import sys
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest import mock
+
+import numpy as np
+
+import experimentos_heuristicas
 
 from agentes_base import AgenteAleatorio
 from arena import jugar_partida
@@ -150,11 +155,23 @@ class FuncionDeEvaluacion(unittest.TestCase):
             with self.assertRaises(ValueError, msg=repr(peso)):
                 FuncionEvaluacion({"centro": peso})
 
+    def test_cota_no_se_desborda_con_enteros_de_tamano_fijo(self):
+        """Con np.int64, abs(w) * 6 se desbordaba y la cota quedaba negativa."""
+        for peso in (np.int64(2**62), np.int64(-(2**62)), 10**400):
+            with self.assertRaises(ValueError, msg=repr(peso)):
+                FuncionEvaluacion({"centro": peso})
+        f = FuncionEvaluacion({"centro": np.int64(2), "lineas_de_3": np.float32(0.5)})
+        b = tablero((3, 1))
+        self.assertEqual(f(b, 1), 2)
+        self.assertIsInstance(f.pesos["centro"], float)
+
     def test_pesos_no_se_pueden_modificar_tras_validar_la_cota(self):
         """Evita que un estado no final supere la utilidad de una victoria."""
         f = FuncionEvaluacion({"centro": 1})
         with self.assertRaises(TypeError):
             f.pesos["centro"] = 1_000_001
+        with self.assertRaises(AttributeError):
+            f.pesos = {"centro": 1_000_001}
         b = tablero((3, 1))
         self.assertFalse(b.is_final())
         self.assertEqual(f(b, 1), 1)
@@ -190,6 +207,47 @@ class CliExperimento(unittest.TestCase):
             self.assertTrue((replica / "partidas.csv").is_file())
             config = json.loads((replica / "config.json").read_text(encoding="utf-8"))
             self.assertEqual(config["id"], "CNT-003-r1")
+
+    @staticmethod
+    def main_con(*argumentos):
+        with mock.patch.object(sys, "argv", ["experimentos_heuristicas.py", "CNT-003", *argumentos]):
+            experimentos_heuristicas.main()
+
+    def test_segunda_corrida_concurrente_con_el_mismo_id_se_rechaza(self):
+        """Simula dos procesos: el segundo arranca mientras el primero está calculando.
+
+        Se hace en un mismo proceso para que el entrelazado sea determinista; con
+        dos procesos reales el resultado dependería de los tiempos de cada uno.
+        """
+        calcular = experimentos_heuristicas.cnt_003
+        rechazos = []
+
+        def calcular_mientras_otro_arranca(partidas):
+            with self.assertRaises(SystemExit) as salida:
+                self.main_con("--partidas", "3", "--carpeta-base", base, "--id", "CNT-X")
+            rechazos.append(salida.exception.code)
+            return calcular(partidas)
+
+        with TemporaryDirectory() as base, mock.patch("sys.stderr"), mock.patch("sys.stdout"), \
+                mock.patch.object(experimentos_heuristicas, "cnt_003", calcular_mientras_otro_arranca):
+            self.main_con("--partidas", "2", "--carpeta-base", base, "--id", "CNT-X")
+            self.assertEqual(rechazos, [2])
+            config = json.loads((Path(base) / "CNT-X" / "config.json").read_text(encoding="utf-8"))
+            self.assertIn("s = 0..1", config["configuracion"]["partidas"])  # quedó la primera
+
+    def test_un_fallo_durante_el_calculo_libera_la_carpeta_reservada(self):
+        with TemporaryDirectory() as base, mock.patch.object(
+            experimentos_heuristicas, "cnt_003", side_effect=RuntimeError("falla simulada")
+        ):
+            with self.assertRaises(RuntimeError):
+                self.main_con("--partidas", "1", "--carpeta-base", base, "--id", "CNT-X")
+            self.assertFalse((Path(base) / "CNT-X").exists())
+
+    def test_rechaza_cantidad_de_partidas_no_positiva(self):
+        with TemporaryDirectory() as base:
+            salida = self.ejecutar("--partidas", "0", "--carpeta-base", base, "--id", "CNT-X")
+            self.assertEqual(salida.returncode, 2, salida.stderr)
+            self.assertFalse((Path(base) / "CNT-X").exists())
 
 
 if __name__ == "__main__":

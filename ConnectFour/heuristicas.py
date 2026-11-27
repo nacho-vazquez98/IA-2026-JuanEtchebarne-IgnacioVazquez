@@ -171,16 +171,31 @@ class FuncionEvaluacion:
         desconocidos = set(pesos) - set(TERMINOS)
         if desconocidos:
             raise ValueError(f"Términos desconocidos: {sorted(desconocidos)}")
+        normalizados = {}
         for t, w in pesos.items():
-            if isinstance(w, bool) or not isinstance(w, Real) or not math.isfinite(w):
+            if isinstance(w, bool) or not isinstance(w, Real):
                 raise ValueError(f"El peso de {t} debe ser un número real finito: {w!r}")
-        cota = sum(abs(w) * COTAS[t] for t, w in pesos.items())
+            # Se pasa a float de Python para que la cota no se desborde con
+            # enteros de tamaño fijo (p. ej. np.int64).
+            try:
+                normalizado = float(w)
+            except OverflowError:
+                normalizado = math.inf
+            if not math.isfinite(normalizado):
+                raise ValueError(f"El peso de {t} debe ser un número real finito: {w!r}")
+            normalizados[t] = normalizado
+        cota = sum(abs(w) * COTAS[t] for t, w in normalizados.items())
         if cota >= UTILIDAD_VICTORIA:
             raise ValueError("Los pesos permiten que Eval alcance la utilidad de una victoria")
-        # Vista de solo lectura: cambiar un peso después de validar la cota podría
-        # hacer que un estado no final supere la utilidad de una victoria.
-        self.pesos = MappingProxyType({t: w for t, w in pesos.items() if w != 0})
-        self.nombre = nombre or "+".join(f"{w}*{t}" for t, w in self.pesos.items())
+        # Vista de solo lectura expuesta por una propiedad sin setter: cambiar un
+        # peso después de validar la cota podría hacer que un estado no final
+        # supere la utilidad de una victoria.
+        self._pesos = MappingProxyType({t: w for t, w in normalizados.items() if w != 0})
+        self.nombre = nombre or "+".join(f"{w}*{t}" for t, w in pesos.items() if w != 0)
+
+    @property
+    def pesos(self):
+        return self._pesos
 
     def terminos(self, board: Board, jugador: int) -> dict:
         return {t: TERMINOS[t](board, jugador) for t in self.pesos}
