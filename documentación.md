@@ -164,6 +164,29 @@ y comparar las variantes en A06.
   para medir el efecto de los bordes sobre el aprendizaje.
 - **Evidencia** — [Registro y resultados](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas-iteración-1).
 
+### 2026-11-27 — ACROBAT — Implementación tabular de Dyna-Q
+
+- **Tarea** — A10.
+- **Decisión** — `AgenteDynaQ` reutiliza el ciclo de episodios, la política y la
+  actualización de Q-Learning. Después de cada transición real, registra el
+  último resultado del par observado y realiza `pasos_planificacion`
+  actualizaciones con transiciones del modelo. El generador de planificación
+  se deriva de la semilla del agente por separado del de la política.
+- **Fin de episodio** — Una terminación elimina el valor futuro en ambas
+  actualizaciones. Un truncamiento por límite de pasos conserva ese valor.
+- **Uso** — Instanciar `AgenteDynaQ` con la grilla y el número de acciones del
+  entorno, y pasarlo a `entrenar` en `Acrobot/experimentos_qlearning.py`.
+  Con cero pasos simulados, el agente reproduce Q-Learning con las mismas
+  semillas y mantiene vacío el modelo de transiciones. El formato NPZ guarda
+  la tabla y su configuración para la evaluación. El modelo de transiciones
+  queda en memoria durante el entrenamiento.
+- **Evidencia** — [Pruebas de Dyna-Q](Acrobot/test_dyna_q.py). Casos numéricos
+  de actualización real y simulada, reemplazo y muestreo de transiciones,
+  separación de semillas y equivalencia con Q-Learning. En una prueba breve
+  con Acrobot-v1 se comprobaron dos actualizaciones simuladas por paso
+  real y se evaluó el NPZ desde otro proceso. La comparación de rendimiento
+  corresponde a A11 y A12.
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas
