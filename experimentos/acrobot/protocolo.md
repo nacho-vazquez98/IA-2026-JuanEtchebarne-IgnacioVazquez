@@ -33,8 +33,8 @@ de esos retornos y se marca el promedio final.
 
 Las mismas trayectorias sirven para calcular el retorno promedio descontado
 con γ de evaluación fijo en 0,99 (Σγᵗrₜ desde t = 0), la tasa de éxito y los pasos promedio
-entre éxitos. Los pasos entre éxitos se registran como ausentes si ningún
-episodio termina por objetivo. El descuento de evaluación es independiente
+por episodio exitoso. Esta última métrica queda ausente si ningún episodio
+termina por objetivo. El descuento de evaluación es independiente
 del γ de entrenamiento para que los resultados se puedan comparar. Se
 considera éxito toda transición con `terminated=True`, incluso si en el
 mismo paso se alcanza el límite.

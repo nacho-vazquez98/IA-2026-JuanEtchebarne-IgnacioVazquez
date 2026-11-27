@@ -1,0 +1,8 @@
+{
+  "episodios": 10000,
+  "segundos": 857.2883613049999,
+  "retorno_promedio": -639.5244,
+  "tasa_exito": 0.2749,
+  "celdas_q_no_nulas": 2393,
+  "bytes_tabla_q": 221184
+}

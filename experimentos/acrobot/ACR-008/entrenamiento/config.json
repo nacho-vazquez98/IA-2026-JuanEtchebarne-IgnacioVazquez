@@ -1,0 +1,19 @@
+{
+  "fecha_utc": "2026-11-27T13:43:44+00:00",
+  "commit": "2d2aa4f28f278f7fae82ff9a1ac83a94fbcfd8eb",
+  "gymnasium": "1.1.1",
+  "numpy": "1.26.4",
+  "version": 1,
+  "entorno": "Acrobot-v1",
+  "max_pasos": 700,
+  "algoritmo": "qlearning",
+  "grilla": "directa",
+  "alpha": 0.5,
+  "gamma": 0.99,
+  "episodios": 10000,
+  "semilla_entorno_inicial": 30000,
+  "semilla_agente": 310003,
+  "decaimiento": "lineal_por_episodio",
+  "epsilon_inicial": 1.0,
+  "epsilon_final": 0.05
+}

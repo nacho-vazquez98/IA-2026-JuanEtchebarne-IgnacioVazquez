@@ -134,6 +134,23 @@ y comparar las variantes en A06.
   entorno Poetry de Acrobot.
 - **Protocolo** — [Protocolo experimental y comandos](experimentos/acrobot/protocolo.md).
 
+### 2026-11-27 — ACROBAT — Primera comparación emparejada de grillas
+
+- **Tarea** — A06, iteración 1.
+- **Decisión** — Conservar ambas grillas como referencia. La diferencia
+  media de retorno greedy de 10,51 puntos tiene una desviación estándar
+  de 184,21 entre los tres pares, así que la muestra es insuficiente para
+  distinguir las políticas finales.
+- **Resultado** — Durante el entrenamiento, la angular alcanzó el objetivo
+  en 61,32 % de los episodios y la directa en 27,94 %. Con el mismo número
+  de episodios, la angular realizó 16,4 % menos pasos. Las dos tablas
+  ocupan 216 KiB y la angular terminó con 3,68 veces más celdas Q con
+  valor distinto de cero.
+- **Siguiente hipótesis** — Probar bordes de velocidad más finos cerca de
+  cero en la directa, con la misma representación y cantidad de intervalos,
+  para medir el efecto de los bordes sobre el aprendizaje.
+- **Evidencia** — [Registro y resultados](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas-iteración-1).
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas
