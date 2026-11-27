@@ -34,6 +34,16 @@ class DiscretizadorAcrobot:
         return cls(bordes)
 
     @classmethod
+    def directa_no_uniforme(cls, espacio_observacion):
+        """Grilla directa con seis intervalos de velocidad más finos cerca de cero."""
+        directa = cls.directa(espacio_observacion)
+        fracciones = np.array([-1, -0.5, -0.125, 0, 0.125, 0.5, 1])
+        bordes_velocidad = [
+            fracciones * float(maximo) for maximo in espacio_observacion.high[4:]
+        ]
+        return cls((*directa._bordes[:4], *bordes_velocidad))
+
+    @classmethod
     def angular(cls, espacio_observacion):
         """Grilla angular uniforme con intervalos de velocidad más finos cerca de cero."""
         bordes_angulares = np.linspace(-np.pi, np.pi, 13)

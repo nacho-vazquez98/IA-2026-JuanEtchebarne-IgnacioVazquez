@@ -29,6 +29,7 @@ GAMMA_EVALUACION = 0.99
 VERSION_MODELO = 1
 GRILLAS = {
     "directa": DiscretizadorAcrobot.directa,
+    "directa_no_uniforme": DiscretizadorAcrobot.directa_no_uniforme,
     "angular": DiscretizadorAcrobot.angular,
 }
 

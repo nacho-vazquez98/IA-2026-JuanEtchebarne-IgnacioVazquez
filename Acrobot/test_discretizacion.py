@@ -21,6 +21,33 @@ class TestDiscretizadorAcrobot(unittest.TestCase):
         for obs in (self.espacio.high, self.espacio.high + 1):
             self.assertEqual(grilla.transformar(obs), (3, 3, 3, 3, 5, 5))
 
+    def test_directa_no_uniforme_conserva_forma_y_bordes_trigonometricos(self):
+        original = DiscretizadorAcrobot.directa(self.espacio)
+        variante = DiscretizadorAcrobot.directa_no_uniforme(self.espacio)
+        self.assertEqual(variante.forma, original.forma)
+        self.assertEqual(np.prod(variante.forma), 9_216)
+        observaciones, _ = ejecutar_episodio()
+        for obs in observaciones:
+            clave = variante.transformar(obs)
+            self.assertEqual(clave[:4], original.transformar(obs)[:4])
+            self.assertEqual(clave, variante.transformar(obs.copy()))
+            self.assertTrue(all(0 <= i < 6 for i in clave[4:]))
+
+    def test_directa_no_uniforme_respeta_bordes_y_saturacion_en_ambas_velocidades(self):
+        grilla = DiscretizadorAcrobot.directa_no_uniforme(self.espacio)
+        obs = np.array([1, 0, 1, 0, 0, 0], dtype=np.float64)
+        maximos = self.espacio.high[4:].astype(np.float64)
+        for indice, fraccion in enumerate((-0.5, -0.125, 0, 0.125, 0.5), start=1):
+            with self.subTest(fraccion=fraccion):
+                obs[4:] = maximos * fraccion
+                self.assertEqual(grilla.transformar(obs)[4:], (indice, indice))
+                obs[4:] = np.nextafter(obs[4:], -np.inf)
+                self.assertEqual(grilla.transformar(obs)[4:], (indice - 1, indice - 1))
+        obs[4:] = -2 * maximos
+        self.assertEqual(grilla.transformar(obs)[4:], (0, 0))
+        obs[4:] = 2 * maximos
+        self.assertEqual(grilla.transformar(obs)[4:], (5, 5))
+
     def test_borde_interno_y_bordes_configurables(self):
         grilla = DiscretizadorAcrobot([[-1, -0.25, 0.5, 1]] * 6)
         self.assertEqual(grilla.transformar([-0.25] * 6), (1,) * 6)
