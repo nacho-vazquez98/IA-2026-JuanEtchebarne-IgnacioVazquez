@@ -216,3 +216,81 @@ for grilla in directa directa_no_uniforme; do
     poetry run python -B experimentos_qlearning.py evaluar --conjunto validacion --episodios 30 --modelo "$salida/$grilla/entrenamiento/modelo.npz" --salida "$salida/$grilla/validacion"
 done
 ```
+
+## ACR-011 a ACR-013 — Segunda iteración formal de grillas
+
+- **Fecha y autor** — 2026-11-27, Codex en Codex Cloud.
+- **Tarea e hipótesis** — A06, iteración 2. Los bordes más finos cerca de
+  velocidad cero pueden aumentar el uso de la tabla de la grilla directa y
+  mejorar el aprendizaje. El piloto ACR-009/010 justificó probar ese
+  efecto con el protocolo formal y las mismas semillas que la directa
+  uniforme de ACR-006–ACR-008.
+- **Configuración** — Las tres corridas de `directa_no_uniforme` usaron el
+  commit `f7c37f4`. Se conservaron α = 0,5, γ de entrenamiento = 0,99,
+  ε lineal de 1 a 0,05, el máximo de 700 pasos y 10.000 episodios de
+  entrenamiento por réplica. Las semillas de agente 310.001, 310.002 y
+  310.003 se emparejaron con semillas de entorno iniciales 10.000, 20.000 y
+  30.000. Cada política se validó en un proceso nuevo con ε = 0, semillas
+  100.000–100.999 y la misma referencia aleatoria ACR-003.
+- **Resultados por réplica** — Cada corrida ocupa 216 KiB de tabla Q densa.
+
+| Corrida | Semilla de entrenamiento | Éxito en entrenamiento | Celdas Q distintas de cero | Retorno greedy | Éxito greedy | Entrenamiento (s) | Validación (s) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| [ACR-011](ACR-011/) | 10.000 | 47,60 % | 5.364 | −293,81 | 97,1 % | 854,68 | 34,20 |
+| [ACR-012](ACR-012/) | 20.000 | 46,76 % | 5.334 | −700,00 | 0,0 % | 846,63 | 76,37 |
+| [ACR-013](ACR-013/) | 30.000 | 47,10 % | 5.384 | −370,25 | 91,1 % | 593,76 | 39,14 |
+
+| Política | Retorno greedy sin descuento | Retorno greedy descontado | Éxito greedy | Pasos por episodio exitoso | Máximo Q inicial | Éxito en entrenamiento |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Angular | −327,40 ± 96,61 | −93,78 | 97,7 % | 321,28 | −57,17 | 61,32 % |
+| Directa uniforme | −337,91 ± 127,25 | −93,37 | 95,6 % | 327,32 | −76,34 | 27,94 % |
+| Directa no uniforme | −454,69 ± 215,86 | −95,72 | 62,7 % | 310,86 | −69,00 | 47,15 % |
+| Aleatoria (ACR-003) | −691,55 | −99,87 | 6,3 % | 566,90 | — | — |
+
+El retorno sin descuento muestra la media y la desviación muestral de las
+tres réplicas de entrenamiento. La media de pasos por episodio exitoso
+usa las réplicas con al menos un éxito. Para la directa no uniforme se
+calcula con ACR-011 y ACR-013. El descuento de evaluación es 0,99.
+
+- **Diferencias emparejadas** — El retorno sin descuento de la no uniforme
+  quedó 25,61, 215,22 y 109,50 puntos por debajo de la uniforme en las
+  semillas 10.000, 20.000 y 30.000. La diferencia media fue −116,78
+  (desviación muestral de 95,02 y error estándar de 54,86). La muestra tiene
+  tres réplicas de entrenamiento y la diferencia varió entre ellas.
+- **Uso de la tabla y costo** — La no uniforme dejó 5.361 celdas Q
+  distintas de cero en promedio, frente a 2.386 de la uniforme y 8.789
+  de la angular. Alcanzó el objetivo en 19,21 puntos porcentuales más de
+  episodios de entrenamiento que la uniforme y realizó 7,9 % menos pasos
+  por cada 10.000 episodios (5,88 millones frente a 6,38 millones). Las tres
+  corridas paralelas tardaron 15 min 25 s de reloj. Los tiempos por fase
+  están en los resúmenes individuales.
+- **Verificación** — Se recalcularon los agregados desde los CSV y se
+  comprobaron las semillas, los parámetros de cada fase y las huellas de
+  los modelos con `medir_replica` y `medir_validacion` de
+  `Acrobot/comparar_grillas.py`. Para ACR-012, las 1.000 filas registran
+  truncamiento al paso 700. Una comprobación con el modelo guardado
+  reprodujo el resultado y el máximo Q inicial en las primeras cinco
+  semillas de validación.
+- **Decisión** — Pasar a A07 con angular y directa uniforme. Con los
+  parámetros de esta prueba, la no uniforme mejoró el éxito durante la
+  exploración y el uso de la tabla frente a la uniforme. Su retorno
+  greedy fue menor en los tres pares, y una réplica falló en todas las
+  semillas de validación. Se conserva el resultado como variante
+  descartada para la búsqueda inicial. La evaluación final sigue reservada.
+- **Evidencia** — [Gráfico por semilla](A06/iteracion-2/comparacion.png),
+  [métricas por réplica](A06/iteracion-2/replicas.csv) y
+  [agregados y diferencias](A06/iteracion-2/resumen.json).
+
+Para reproducir ACR-011 desde `Acrobot/`, usar una carpeta de salida nueva:
+
+```sh
+salida="$(mktemp -d)"
+poetry run python -B experimentos_qlearning.py entrenar --grilla directa_no_uniforme --episodios 10000 --semilla 10000 --semilla-agente 310001 --alpha 0.5 --gamma 0.99 --epsilon-inicial 1 --epsilon-final 0.05 --salida "$salida/entrenamiento"
+poetry run python -B experimentos_qlearning.py evaluar --conjunto validacion --episodios 1000 --modelo "$salida/entrenamiento/modelo.npz" --salida "$salida/validacion"
+```
+
+Para reproducir ACR-012 y ACR-013, usar las respectivas parejas de semillas
+20.000/310.002 y 30.000/310.003. Cada agregado es la media de las
+mediciones por réplica. Para los intervalos de dispersión, se trata cada
+entrenamiento como una réplica. En las diferencias, se resta la medición
+uniforme de la no uniforme con la misma semilla.

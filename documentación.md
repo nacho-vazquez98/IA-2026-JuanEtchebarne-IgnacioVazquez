@@ -166,6 +166,18 @@ y comparar las variantes en A06.
   directa uniforme. Se necesita la comparación emparejada formal para
   decidir su incorporación a A07. [Registro del piloto](experimentos/acrobot/registro.md#acr-009-y-acr-010--piloto-de-la-segunda-iteración-de-grillas).
 
+### 2026-11-27 — ACROBAT — Selección de grillas después de la prueba formal
+
+- **Tarea** — A06, iteración 2.
+- **Resultado** — La directa no uniforme subió el éxito de entrenamiento
+  de 27,94 % a 47,15 % y dejó 5.361 celdas Q distintas de cero frente a
+  2.386 de la uniforme. Con ε = 0, su retorno fue inferior en los tres
+  pares y una réplica obtuvo cero éxitos de 1.000.
+- **Decisión** — Mantener angular y directa uniforme para A07. La no
+  uniforme queda como resultado experimental de la segunda iteración.
+  La selección prioriza el retorno greedy en las mismas semillas.
+- **Evidencia** — [Corridas y comparación formal](experimentos/acrobot/registro.md#acr-011-a-acr-013--segunda-iteración-formal-de-grillas).
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas
