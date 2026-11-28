@@ -1,0 +1,9 @@
+{
+  "grilla": "directa",
+  "n": 0,
+  "episodios": 6,
+  "reales": 3974,
+  "simuladas": 0,
+  "segundos_entrenamiento": 0.3773293969934457,
+  "segundos_por_millon_de_pasos_reales": 94.94952113574377
+}

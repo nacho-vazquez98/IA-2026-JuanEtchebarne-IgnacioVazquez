@@ -164,6 +164,20 @@ y comparar las variantes en A06.
   para medir el efecto de los bordes sobre el aprendizaje.
 - **Evidencia** — [Registro y resultados](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas-iteración-1).
 
+### 2026-11-28 — ACROBAT — Presupuesto exploratorio de Dyna-Q
+
+- **Tarea** — A11, piloto y preparación de la primera ronda.
+- **Decisión** — Comparar 0, 5 y 15 actualizaciones simuladas por paso real
+  primero en la grilla angular con tres semillas emparejadas. Mantener la
+  misma tasa de aprendizaje, descuento y exploración para aislar el efecto
+  de la planificación.
+- **Motivo** — En el piloto, las actualizaciones simuladas elevaron el
+  costo de entrenamiento por interacción real. La señal de rendimiento
+  varió entre grillas y puntos de control, por lo que una réplica no basta
+  para seleccionar una configuración. Se pospone la prueba en ambas grillas
+  hasta contar con evidencia de la primera ronda.
+- **Evidencia** — [Resultados y protocolo de A11](experimentos/acrobot/A11/registro.md).
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas

@@ -1,0 +1,10 @@
+{
+  "episodios": 4,
+  "retorno_promedio": -276.0,
+  "desviacion_retorno": 46.47042069962354,
+  "retorno_descontado_promedio": -93.06705501530071,
+  "max_q_inicial_promedio": -7.915580955674246,
+  "tasa_exito": 1.0,
+  "pasos_promedio_exitos": 277,
+  "segundos": 0.11438063099922147
+}

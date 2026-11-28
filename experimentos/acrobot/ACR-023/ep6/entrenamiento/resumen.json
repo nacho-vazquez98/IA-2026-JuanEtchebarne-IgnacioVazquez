@@ -1,0 +1,9 @@
+{
+  "grilla": "angular",
+  "n": 0,
+  "episodios": 6,
+  "reales": 4200,
+  "simuladas": 0,
+  "segundos_entrenamiento": 0.3791195969970431,
+  "segundos_por_millon_de_pasos_reales": 90.26657071358169
+}

@@ -1,0 +1,32 @@
+{
+  "fecha_utc": "2026-11-27T21:19:43+00:00",
+  "commit": "bbdb86ebf39a7baf54539f4f8d0a82bfc022e008",
+  "gymnasium": "1.1.1",
+  "numpy": "1.26.4",
+  "entorno": "Acrobot-v1",
+  "max_pasos": 700,
+  "politica": "greedy",
+  "epsilon": 0,
+  "modelo": {
+    "version": 1,
+    "entorno": "Acrobot-v1",
+    "max_pasos": 700,
+    "grilla": "directa",
+    "alpha": 0.5,
+    "gamma": 0.99,
+    "algoritmo": "dyna-q",
+    "pasos_planificacion": 5,
+    "semilla_agente": 310001,
+    "semilla_entorno_inicial": 10000,
+    "episodios": 12,
+    "epsilon_inicial": 1.0,
+    "epsilon_final": 0.05,
+    "episodios_guardados": 12
+  },
+  "sha256_modelo": "43e6bed6d8974f0ef31526e19e8f7825f2ff0f758b97f3afa3c1fb9f0847b316",
+  "conjunto": "validacion",
+  "episodios": 4,
+  "semilla_entorno_inicial": 100000,
+  "semilla_politica": 300000,
+  "gamma_evaluacion": 0.99
+}
