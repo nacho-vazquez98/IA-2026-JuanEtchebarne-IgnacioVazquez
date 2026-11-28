@@ -164,6 +164,22 @@ y comparar las variantes en A06.
   para medir el efecto de los bordes sobre el aprendizaje.
 - **Evidencia** — [Registro y resultados](experimentos/acrobot/registro.md#acr-004-a-acr-008--comparación-de-grillas-iteración-1).
 
+### 2026-11-28 — ACROBAT — Búsqueda de hiperparámetros de Q-Learning
+
+- **Tarea** — A07, piloto exploratorio.
+- **Decisión** — Replicar en la grilla angular las dos combinaciones con
+  mayor retorno del piloto, junto con el control de A06 y una combinación
+  intermedia de α y γ. Las dos variantes destacadas conservaron un ε final
+  de 0,20.
+- **Motivo** — En los cuatro pares con los mismos α y γ, ε final de 0,20
+  dio mayor retorno de validación que 0,02. La réplica con tres semillas
+  permitirá comprobar si la diferencia persiste más allá del único
+  entrenamiento breve de cada configuración.
+- **Siguiente paso** — Tras integrar A06, medir el retorno greedy con
+  500 episodios de entrenamiento por réplica. La confirmación formal
+  vuelve a comparar las grillas angular y directa uniforme.
+- **Evidencia** — [Registro, resultados y protocolo de A07](experimentos/acrobot/A07/registro.md).
+
 ## COUNTER — Connect Four (Minimax, Alpha-Beta y Expectimax)
 
 ### 2026-11-24 — COUNTER — Rival oficial y protocolo base de partidas
