@@ -1,0 +1,155 @@
+{
+  "semillas_validacion": [
+    100000,
+    100001,
+    100002,
+    100003
+  ],
+  "grilla_angular_n5_igual_sin_pausas": true,
+  "resultados": [
+    {
+      "grilla": "angular",
+      "n": 0,
+      "episodios": 6,
+      "reales": 4200,
+      "simuladas": 0,
+      "segundos_entrenamiento": 0.3791195969970431,
+      "segundos_por_millon_de_pasos_reales": 90.26657071358169,
+      "retorno_greedy": -628.75,
+      "exito_greedy": 0.5,
+      "segundos_validacion": 0.24162064000120154
+    },
+    {
+      "grilla": "angular",
+      "n": 0,
+      "episodios": 12,
+      "reales": 8020,
+      "simuladas": 0,
+      "segundos_entrenamiento": 0.7740418589964975,
+      "segundos_por_millon_de_pasos_reales": 96.51394750579769,
+      "retorno_greedy": -374.25,
+      "exito_greedy": 1.0,
+      "segundos_validacion": 0.15002796900080284
+    },
+    {
+      "grilla": "angular",
+      "n": 5,
+      "episodios": 6,
+      "reales": 4200,
+      "simuladas": 21000,
+      "segundos_entrenamiento": 0.5657979379975586,
+      "segundos_por_millon_de_pasos_reales": 134.7137947613235,
+      "retorno_greedy": -683.0,
+      "exito_greedy": 0.25,
+      "segundos_validacion": 0.275500584000838
+    },
+    {
+      "grilla": "angular",
+      "n": 5,
+      "episodios": 12,
+      "reales": 8323,
+      "simuladas": 41615,
+      "segundos_entrenamiento": 1.1683571859975928,
+      "segundos_por_millon_de_pasos_reales": 140.3769297125547,
+      "retorno_greedy": -543.75,
+      "exito_greedy": 0.5,
+      "segundos_validacion": 0.2185441030014772
+    },
+    {
+      "grilla": "angular",
+      "n": 15,
+      "episodios": 6,
+      "reales": 4200,
+      "simuladas": 63000,
+      "segundos_entrenamiento": 0.8544404670028598,
+      "segundos_por_millon_de_pasos_reales": 203.43820642925235,
+      "retorno_greedy": -461.0,
+      "exito_greedy": 0.75,
+      "segundos_validacion": 0.1978611259983154
+    },
+    {
+      "grilla": "angular",
+      "n": 15,
+      "episodios": 12,
+      "reales": 8372,
+      "simuladas": 125580,
+      "segundos_entrenamiento": 1.7868573560044752,
+      "segundos_por_millon_de_pasos_reales": 213.43255566226412,
+      "retorno_greedy": -588.25,
+      "exito_greedy": 0.5,
+      "segundos_validacion": 0.24578545300028054
+    },
+    {
+      "grilla": "directa",
+      "n": 0,
+      "episodios": 6,
+      "reales": 3974,
+      "simuladas": 0,
+      "segundos_entrenamiento": 0.3773293969934457,
+      "segundos_por_millon_de_pasos_reales": 94.94952113574377,
+      "retorno_greedy": -536.0,
+      "exito_greedy": 0.5,
+      "segundos_validacion": 0.2245922750007594
+    },
+    {
+      "grilla": "directa",
+      "n": 0,
+      "episodios": 12,
+      "reales": 8014,
+      "simuladas": 0,
+      "segundos_entrenamiento": 0.8151963959899149,
+      "segundos_por_millon_de_pasos_reales": 101.72153680932306,
+      "retorno_greedy": -334.75,
+      "exito_greedy": 1.0,
+      "segundos_validacion": 0.13817366299917921
+    },
+    {
+      "grilla": "directa",
+      "n": 5,
+      "episodios": 6,
+      "reales": 4200,
+      "simuladas": 21000,
+      "segundos_entrenamiento": 0.5858588050032267,
+      "segundos_por_millon_de_pasos_reales": 139.49019166743494,
+      "retorno_greedy": -494.0,
+      "exito_greedy": 0.5,
+      "segundos_validacion": 0.2004319650004618
+    },
+    {
+      "grilla": "directa",
+      "n": 5,
+      "episodios": 12,
+      "reales": 7680,
+      "simuladas": 38400,
+      "segundos_entrenamiento": 1.1038297660052194,
+      "segundos_por_millon_de_pasos_reales": 143.72783411526297,
+      "retorno_greedy": -700.0,
+      "exito_greedy": 0.0,
+      "segundos_validacion": 0.29227568799979053
+    },
+    {
+      "grilla": "directa",
+      "n": 15,
+      "episodios": 6,
+      "reales": 4099,
+      "simuladas": 61485,
+      "segundos_entrenamiento": 0.8374183510022704,
+      "segundos_por_millon_de_pasos_reales": 204.2982071242426,
+      "retorno_greedy": -700.0,
+      "exito_greedy": 0.0,
+      "segundos_validacion": 0.2849475990005885
+    },
+    {
+      "grilla": "directa",
+      "n": 15,
+      "episodios": 12,
+      "reales": 7972,
+      "simuladas": 119580,
+      "segundos_entrenamiento": 1.6759221160027664,
+      "segundos_por_millon_de_pasos_reales": 210.22605569527926,
+      "retorno_greedy": -276.0,
+      "exito_greedy": 1.0,
+      "segundos_validacion": 0.11438063099922147
+    }
+  ]
+}
