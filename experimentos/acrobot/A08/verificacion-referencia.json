@@ -1,0 +1,22 @@
+{
+  "modelo_referencia": "ACR-002",
+  "ruta_modelo": "experimentos/acrobot/ACR-002/entrenamiento/modelo.npz",
+  "ruta_validacion_archivada": "experimentos/acrobot/ACR-002/validacion",
+  "commit_entrenamiento": "82ebb03535383400936fc30dd999e76e12ed69aa",
+  "fecha_utc": "2026-11-28T05:35:54+00:00",
+  "commit_codigo_probado": "6350654214b97446807722c3364b618a6fca696c",
+  "python": "3.12.14",
+  "gymnasium": "1.1.1",
+  "numpy": "1.26.4",
+  "sha256_modelo": "79036ae52873cc43749f9a68028386b36223676943cd30627e9b574f32e287ca",
+  "conjunto": "validacion",
+  "politica": "greedy",
+  "epsilon": 0,
+  "semilla_entorno_inicial": 100000,
+  "semilla_politica": 300000,
+  "episodios_identicos": 20,
+  "episodios_validacion_archivada_verificados": 1000,
+  "retorno_medio_sin_descuento": -462.85,
+  "exitos": 19,
+  "segundos_evaluacion": 0.8898750860000746
+}
